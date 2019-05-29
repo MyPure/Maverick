@@ -9,15 +9,16 @@ public class WaterGhost : MonoBehaviour
     float existTime = 0;
     Vector3 up;
     Vector3 down;
+    public GameObject platform;
     void Start()
     {
-        up = down + Vector3.up * 3.5f;
-        down = transform.position;
         existTime = 0;
     }
 
     void Update()
     {
+        down = platform.transform.position;
+        up = down + Vector3.up * 4.0f;
         existTime += Time.deltaTime;
         if ((int)existTime % 2 == 0)
         {
