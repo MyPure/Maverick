@@ -48,7 +48,7 @@ public class SpritesCycle : MonoBehaviour
     }
     private void Update()
     {
-        transform.position = tcamera.transform.position + new Vector3(0, 0, 10);
+        transform.position = tcamera.transform.position + new Vector3(0, 0, -tcamera.transform.position.z);
         SetPosition(tcamera.transform.position.x * factor.x);
     }
 }
