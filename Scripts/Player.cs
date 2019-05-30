@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public PlayerState currentState;
-    public List<PlayerState> playerStates;
+    public PlayerState currentState;//当前状态
+    public List<PlayerState> playerStates;//所有状态
     public float height = 2.0f;//角色高
     public float width = 1.0f;//角色宽
     public float speed = 4.0f;//角色移动速度
