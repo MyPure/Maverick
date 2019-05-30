@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537c2f17152c868439d0b503b3c0e53b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platform: {fileID: 9080834860555595168}
 --- !u!1 &9080834860555595168
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,5 +292,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948d19962c821ee4c8bba110f2382997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropInterval: 0.5
   order: 0
