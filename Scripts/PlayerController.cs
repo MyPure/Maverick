@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     //主摄像机
     private Camera mainCamera;
 
+    //碰撞盒
+    private BoxCollider boxCollider;
+
     //刚体
     //public Rigidbody rigidBody;
 
@@ -30,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         mainCamera = Camera.main;
         characterController = GetComponent<CharacterController>();
+        boxCollider = GetComponent<BoxCollider>();
 
         //基础上升为1.5个单位，初速度应为sqrt(30),但不知为什么不对
         //jumpSpeed = Mathf.Sqrt(30);
@@ -81,6 +85,30 @@ public class PlayerController : MonoBehaviour
         //模拟重力
         moveDirection.y -= gravity * Time.deltaTime;
         characterController.Move(moveDirection * Time.deltaTime);
+
+        #endregion
+
+        #region 蹲下
+
+        //后期还要加上蹲下动作的贴图等
+        //因此不能直接修改transform的范围
+
+        //按下蹲y方向上缩小一半，松开复原
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            //碰撞盒和控制器的高度都要改变
+            boxCollider.size = 
+                new Vector3(boxCollider.size.x, boxCollider.size.y / 2, boxCollider.size.z);
+            characterController.height /= 2;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            //碰撞盒和控制器的高度都要改变
+            boxCollider.size =
+                new Vector3(boxCollider.size.x, boxCollider.size.y * 2, boxCollider.size.z);
+            characterController.height *= 2;
+        }
 
         #endregion
     }
