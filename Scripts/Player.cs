@@ -24,6 +24,10 @@ public class Player : MonoBehaviour
             state.SetType();
         }
         currentState.StateStart();
+        if (currentState)
+        {
+            currentState = GetComponent<Stand>();
+        }
     }
     /// <summary>
     /// 状态在每帧更新时调用
