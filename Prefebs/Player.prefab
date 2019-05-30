@@ -104,8 +104,8 @@ MonoBehaviour:
   width: 1
   speed: 4
   G: 20
-  rayY: 3
-  rayX: 5
+  rayY: 4
+  rayX: 6
 --- !u!114 &3185532745821725825
 MonoBehaviour:
   m_ObjectHideFlags: 0

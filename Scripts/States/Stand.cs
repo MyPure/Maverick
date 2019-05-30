@@ -15,7 +15,7 @@ public class Stand : PlayerState
             List<RaycastHit2D> hits = new List<RaycastHit2D>();
             for (int i = 0; i < player.rayX; i++)
             {
-                hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(player.width / 2, -player.height / 2 + i * player.height / 2), Vector2.right, player.speed * Time.deltaTime));
+                hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(player.width / 2, -player.height / 2 + i * player.height / (player.rayX - 1)), Vector2.right, player.speed * Time.deltaTime));
             }
             bool haveObstacle = false;
             foreach(RaycastHit2D h in hits)
@@ -33,7 +33,7 @@ public class Stand : PlayerState
             List<RaycastHit2D> hits = new List<RaycastHit2D>();
             for (int i = 0; i < player.rayX; i++)
             {
-                hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(-player.width / 2, -player.height / 2 + i * player.height / 2), Vector2.left, player.speed * Time.deltaTime));
+                hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(-player.width / 2, -player.height / 2 + i * player.height / (player.rayX-1)), Vector2.left, player.speed * Time.deltaTime));
             }
             bool haveObstacle = false;
             foreach (RaycastHit2D h in hits)
@@ -57,8 +57,8 @@ public class Stand : PlayerState
         List<RaycastHit2D> hits = new List<RaycastHit2D>();
         for (int i = 0; i < player.rayY; i++)
         {
-            hits.Add(Physics2D.Raycast((Vector2)transform.position - new Vector2(player.width / 2 - i * player.width / 2, player.height / 2), Vector2.down, 0.1f));
-            Debug.DrawLine(transform.position - new Vector3(player.width / 2 - i * player.width / 2, player.height / 2, 0), transform.position - new Vector3(player.width / 2 - i * player.width / 2, player.height / 2, 0) + Vector3.down * Time.deltaTime, Color.red);
+            hits.Add(Physics2D.Raycast((Vector2)transform.position - new Vector2(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2), Vector2.down, 0.1f));
+            Debug.DrawLine(transform.position - new Vector3(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2, 0), transform.position - new Vector3(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2, 0) + Vector3.down * Time.deltaTime, Color.red);
         }
         bool onGround = false;
         for (int i = 0; i < hits.Count; i++)
