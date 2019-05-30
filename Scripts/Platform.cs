@@ -6,7 +6,7 @@ public class Platform : MonoBehaviour
 {
     float existTime;//存在时间
     public static float startDropTime = 3.0f;//开始掉落时间
-    public float dropInterval = 0.5f;//掉落间隔
+    public static float dropInterval = 0.5f;//掉落间隔
     public int order;//掉落次序，从0开始
     void Start()
     {
