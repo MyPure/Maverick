@@ -19,7 +19,7 @@ public class Platform : MonoBehaviour
         {
             drop();
         }
-        if (transform.position.y < -6)
+        if (transform.position.y < -10)
         {
             Destroy(gameObject);
         }
