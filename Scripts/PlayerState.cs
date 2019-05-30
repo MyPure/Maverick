@@ -55,7 +55,7 @@ public class PlayerState : MonoBehaviour
             bool haveObstacle = false;
             foreach (RaycastHit2D h in hits)
             {
-                if (h.collider)
+                if (h.collider && !h.collider.isTrigger)
                 {
                     haveObstacle = true;
                     break;
@@ -73,7 +73,7 @@ public class PlayerState : MonoBehaviour
             bool haveObstacle = false;
             foreach (RaycastHit2D h in hits)
             {
-                if (h.collider)
+                if (h.collider && !h.collider.isTrigger)
                 {
                     haveObstacle = true;
                     break;

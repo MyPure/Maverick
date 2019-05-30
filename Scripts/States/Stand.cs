@@ -29,7 +29,7 @@ public class Stand : PlayerState
         for (int i = 0; i < hits.Count; i++)
         {
             
-            if (hits[i].collider)
+            if (hits[i].collider && !hits[i].collider.isTrigger)
             {
                 onGround = true;
                 break;

@@ -23,7 +23,7 @@ public class Jump : PlayerState
         }
         for(int i = 0; i < hits.Count; i++)
         {
-            if (hits[i].collider)
+            if (hits[i].collider && !hits[i].collider.isTrigger)
             {
                 transform.position = new Vector3(transform.position.x, hits[i].point.y + player.height / 2 + 0.02f, 0);
                 ChangeStateTo(StateType.Stand);//Jump -> Stand
