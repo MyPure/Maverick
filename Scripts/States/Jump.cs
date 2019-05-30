@@ -5,20 +5,20 @@ using UnityEngine;
 public class Jump : PlayerState
 {
     public float jumpH = 1.5f;//跳跃高度
-    float velocity;
+    float velocity;//y轴速度
     public override void StateStart()
     {
-        velocity = Mathf.Sqrt(2 * player.G * jumpH);
+        velocity = Mathf.Sqrt(2 * player.G * jumpH);//v = √2gh
     }
     public override void StateUpdate()
     {
         HandleInput();
-        transform.Translate(Vector3.up * Time.deltaTime * velocity);
-        velocity -= player.G * Time.deltaTime;
+        transform.Translate(Vector3.up * Time.deltaTime * velocity);//下落
+        velocity -= player.G * Time.deltaTime;//模拟重力
         List<RaycastHit2D> hits = new List<RaycastHit2D>();
         for (int i = 0; i < player.rayY; i++)
         {
-            hits.Add(Physics2D.Raycast((Vector2)transform.position - new Vector2(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2), Vector2.down, Mathf.Abs(velocity) * Time.deltaTime));
+            hits.Add(Physics2D.Raycast((Vector2)transform.position - new Vector2(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2), Vector2.down, Mathf.Abs(velocity) * Time.deltaTime, ~(1 << 8)));
             Debug.DrawLine(transform.position - new Vector3(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2 , 0), transform.position - new Vector3(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2,0) + Vector3.down * Mathf.Abs(velocity) * Time.deltaTime,Color.red);
         }
         for(int i = 0; i < hits.Count; i++)
@@ -32,42 +32,7 @@ public class Jump : PlayerState
     }
     public override void HandleInput()
     {
-        if (Input.GetAxis("Horizontal") > 0)
-        {
-            List<RaycastHit2D> hits = new List<RaycastHit2D>();
-            for (int i = 0; i < player.rayX; i++)
-            {
-                hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(player.width / 2, -player.height / 2 + i * player.height / (player.rayX - 1)), Vector2.right, player.speed * Time.deltaTime));
-            }
-            bool haveObstacle = false;
-            foreach (RaycastHit2D h in hits)
-            {
-                if (h.collider)
-                {
-                    haveObstacle = true;
-                    break;
-                }
-            }
-            if (!haveObstacle) MoveTo(Vector3.right * Input.GetAxis("Horizontal") * player.speed * Time.deltaTime);
-        }
-        else if (Input.GetAxis("Horizontal") < 0)
-        {
-            List<RaycastHit2D> hits = new List<RaycastHit2D>();
-            for (int i = 0; i < player.rayX; i++)
-            {
-                hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(-player.width / 2, -player.height / 2 + i * player.height / (player.rayX - 1)), Vector2.left, player.speed * Time.deltaTime));
-            }
-            bool haveObstacle = false;
-            foreach (RaycastHit2D h in hits)
-            {
-                if (h.collider)
-                {
-                    haveObstacle = true;
-                    break;
-                }
-            }
-            if (!haveObstacle) MoveTo(Vector3.right * Input.GetAxis("Horizontal") * player.speed * Time.deltaTime);
-        }
+        HorizontalMove();
     }
     public override void SetType()
     {
