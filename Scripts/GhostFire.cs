@@ -18,7 +18,9 @@ public class GhostFire : MonoBehaviour
 
     void Start()
     {
-        player = player ?? GameObject.FindGameObjectWithTag("Player");
+        if(player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
     }

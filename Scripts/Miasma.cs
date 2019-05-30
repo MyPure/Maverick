@@ -18,9 +18,11 @@ public class Miasma : MonoBehaviour
 
     void Start()
     {
-        player = player ?? GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
+        
 
-        gameObject.transform.position += new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -0.01f);
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -0.01f);
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
     }

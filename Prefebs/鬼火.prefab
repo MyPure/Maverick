@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  DeadUI: {fileID: 8539537988739782524, guid: 70a847eabb4572d4ca2620f62a7181aa, type: 3}
 --- !u!61 &764503954580686685
 BoxCollider2D:
   m_ObjectHideFlags: 0

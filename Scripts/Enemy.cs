@@ -15,7 +15,9 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        player = player ?? GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     //使用的是触发器，也可以使用碰撞器
