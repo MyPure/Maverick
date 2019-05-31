@@ -5,13 +5,16 @@ using UnityEngine;
 public enum StateType {
     Stand,
     Jump,
+    DoubleJump,
     Squat,
     Drop
 }
 
 public class PlayerState : MonoBehaviour
 {
+    [HideInInspector]
     public StateType stateType;
+    [HideInInspector]
     public Player player;
     public virtual void HandleInput()
     {
@@ -30,6 +33,10 @@ public class PlayerState : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// 状态切换
+    /// </summary>
+    /// <param name="type">目标状态</param>
     public void ChangeStateTo(StateType type)
     {
         foreach (PlayerState s in player.playerStates)

@@ -6,10 +6,6 @@ public class Stand : PlayerState
 {
     public override void HandleInput()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            ChangeStateTo(StateType.Jump);//Stand -> Jump
-        }
         HorizontalMove();
     }
     public override void StateStart()
@@ -18,7 +14,7 @@ public class Stand : PlayerState
     }
     public override void StateUpdate()
     {
-        HandleInput();
+        HandleInput();//检测输入
         List<RaycastHit2D> hits = new List<RaycastHit2D>();
         for (int i = 0; i < player.rayY; i++)
         {
@@ -35,7 +31,20 @@ public class Stand : PlayerState
                 break;
             }
         }
-        if(!onGround) ChangeStateTo(StateType.Drop);//Stand -> Drop
+        if (!onGround)
+        {
+            ChangeStateTo(StateType.Drop);//Stand -> Drop
+            return;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            ChangeStateTo(StateType.Squat);//Stand -> Squat
+            return;
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            ChangeStateTo(StateType.Jump);//Stand -> Jump
+        }
     }
     public override void SetType()
     {

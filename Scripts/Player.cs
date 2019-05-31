@@ -23,11 +23,12 @@ public class Player : MonoBehaviour
             state.player = this;
             state.SetType();
         }
-        currentState.StateStart();
-        if (currentState)
+        //设置默认状态
+        if (!currentState)
         {
             currentState = GetComponent<Stand>();
         }
+        currentState.StateStart();
     }
     /// <summary>
     /// 状态在每帧更新时调用

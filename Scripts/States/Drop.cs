@@ -11,7 +11,7 @@ public class Drop : PlayerState
     }
     public override void StateUpdate()
     {
-        HandleInput();
+        HandleInput();//检测输入
         transform.Translate(Vector3.up * velocity * Time.deltaTime);
         velocity -= player.G * Time.deltaTime;
         List<RaycastHit2D> hits = new List<RaycastHit2D>();
@@ -26,7 +26,13 @@ public class Drop : PlayerState
             {
                 transform.position = new Vector3(transform.position.x, hits[i].point.y + player.height / 2 + 0.02f, 0);
                 ChangeStateTo(StateType.Stand);//Drop -> Stand
+                return;
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ChangeStateTo(StateType.DoubleJump);//Drop -> DoubleJump
+            return;
         }
     }
     public override void HandleInput()

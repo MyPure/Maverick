@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jump : PlayerState
+public class DoubleJump : PlayerState
 {
-    public float jumpH = 1.5f;//跳跃高度
-    float velocity;//y轴速度
+    float velocity;
+    public float jumpH = 1.5f;
+    public override void HandleInput()
+    {
+        HorizontalMove();
+    }
     public override void StateStart()
     {
         velocity = Mathf.Sqrt(2 * player.G * jumpH);//v = √2gh
@@ -21,24 +25,16 @@ public class Jump : PlayerState
         for (int i = 0; i < player.rayY; i++)
         {
             hits.Add(Physics2D.Raycast((Vector2)transform.position - new Vector2(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2), Vector2.down, Mathf.Abs(velocity) * Time.deltaTime, ~(1 << 8)));
-            Debug.DrawLine(transform.position - new Vector3(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2 , 0), transform.position - new Vector3(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2,0) + Vector3.down * Mathf.Abs(velocity) * Time.deltaTime,Color.red);
+            Debug.DrawLine(transform.position - new Vector3(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2, 0), transform.position - new Vector3(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2, 0) + Vector3.down * Mathf.Abs(velocity) * Time.deltaTime, Color.red);
         }
-        for(int i = 0; i < hits.Count; i++)
+        for (int i = 0; i < hits.Count; i++)
         {
             if (hits[i].collider && !hits[i].collider.isTrigger)
             {
                 transform.position = new Vector3(transform.position.x, hits[i].point.y + player.height / 2 + 0.02f, 0);
-                ChangeStateTo(StateType.Stand);//Jump -> Stand
-                return;
+                ChangeStateTo(StateType.Stand);//DoubleJump -> Stand
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ChangeStateTo(StateType.DoubleJump);//Jump -> DoubleJump
-            return;
-        }
-
         //磕头判定
         if (velocity > 0)//只有上升期才判定
         {
@@ -58,12 +54,8 @@ public class Jump : PlayerState
             }
         }
     }
-    public override void HandleInput()
-    {
-        HorizontalMove();
-    }
     public override void SetType()
     {
-        stateType = StateType.Jump;
+        stateType = StateType.DoubleJump;
     }
 }
