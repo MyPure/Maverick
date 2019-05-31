@@ -33,15 +33,16 @@ public class CollectableItem : MonoBehaviour
 
     IEnumerator Disappear()
     {
-        Debug.Log("收集到了");
         //修改数据
         switch (itemType)
         {
             case ItemCode.元神碎片:
-                GameData.Count_Fragment++;
+                GameData.Count_Fragment+=10;
+                Debug.Log("当前元神碎片的数量是" + GameData.Count_Fragment);
                 break;
             case ItemCode.鬼门卯:
                 GameData.Count_GhostDoorMortise++;
+                Debug.Log("当前鬼门卯的数量是" + GameData.Count_GhostDoorMortise);
                 break;
             default:
                 Debug.Log("收集到了奇怪的东西");
