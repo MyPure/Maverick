@@ -18,7 +18,7 @@ public class ButtonAction : MonoBehaviour
     /// </summary>
     public void TryAgain()
     {
-
+        SceneManager.LoadScene("Main");
         Debug.Log("再来一次");
     }
 }
