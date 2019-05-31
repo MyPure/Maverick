@@ -7,7 +7,8 @@ public enum StateType {
     Jump,
     DoubleJump,
     Squat,
-    Drop
+    Drop,
+    Climb
 }
 
 public class PlayerState : MonoBehaviour
