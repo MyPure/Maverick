@@ -48,11 +48,13 @@ public class CollectableItem : MonoBehaviour
                 Debug.Log("收集到了奇怪的东西");
                 break;
         }
+        
         //显示到HUD上
-
-
 
         //播放音效
         yield return null;
+
+        //销毁物体
+        Destroy(gameObject);
     }
 }
