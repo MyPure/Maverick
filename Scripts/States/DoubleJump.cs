@@ -22,17 +22,20 @@ public class DoubleJump : PlayerState
 
         //触地判定
         List<RaycastHit2D> hits = new List<RaycastHit2D>();
-        for (int i = 0; i < player.rayY; i++)
+        if (velocity <= 0)//只有下降期才判定
         {
-            hits.Add(Physics2D.Raycast((Vector2)transform.position - new Vector2(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2), Vector2.down, Mathf.Abs(velocity) * Time.deltaTime, ~(1 << 8)));
-            Debug.DrawLine(transform.position - new Vector3(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2, 0), transform.position - new Vector3(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2, 0) + Vector3.down * Mathf.Abs(velocity) * Time.deltaTime, Color.red);
-        }
-        for (int i = 0; i < hits.Count; i++)
-        {
-            if (hits[i].collider && !hits[i].collider.isTrigger)
+            for (int i = 0; i < player.rayY; i++)
             {
-                transform.position = new Vector3(transform.position.x, hits[i].point.y + player.height / 2 + 0.02f, 0);
-                ChangeStateTo(StateType.Stand);//DoubleJump -> Stand
+                hits.Add(Physics2D.Raycast((Vector2)transform.position - new Vector2(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2), Vector2.down, Mathf.Abs(velocity) * Time.deltaTime, ~(1 << 8)));
+                Debug.DrawLine(transform.position - new Vector3(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2, 0), transform.position - new Vector3(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2, 0) + Vector3.down * Mathf.Abs(velocity) * Time.deltaTime, Color.red);
+            }
+            for (int i = 0; i < hits.Count; i++)
+            {
+                if (hits[i].collider && !hits[i].collider.isTrigger)
+                {
+                    transform.position = new Vector3(transform.position.x, hits[i].point.y + player.height / 2 + 0.02f, 0);
+                    ChangeStateTo(StateType.Stand);//DoubleJump -> Stand
+                }
             }
         }
         //磕头判定
