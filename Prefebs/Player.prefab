@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3185532745821725827}
   - component: {fileID: 6740018947254816308}
   - component: {fileID: 7782426678128537790}
+  - component: {fileID: 6007908598774719268}
   - component: {fileID: 1422941891}
   - component: {fileID: 1422941892}
   - component: {fileID: 1422941885}
@@ -107,6 +108,7 @@ MonoBehaviour:
   - {fileID: 3185532745821725827}
   - {fileID: 6740018947254816308}
   - {fileID: 7782426678128537790}
+  - {fileID: 6007908598774719268}
   height: 2
   width: 1
   speed: 4
@@ -188,6 +190,21 @@ MonoBehaviour:
   squatHeight: 1
   standSprite: {fileID: 21300000, guid: 8cdc2e40b8fe71c48983171ba19ff042, type: 3}
   squatSprite: {fileID: 21300016, guid: 8cdc2e40b8fe71c48983171ba19ff042, type: 3}
+--- !u!114 &6007908598774719268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3185532745821725826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b493ebd1efd99a54c99e94be3b77e4da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateType: 0
+  player: {fileID: 0}
+  dropSpeed: 1
 --- !u!61 &1422941891
 BoxCollider2D:
   m_ObjectHideFlags: 0

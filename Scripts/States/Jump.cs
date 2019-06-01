@@ -6,15 +6,41 @@ public class Jump : PlayerState
 {
     public float jumpH = 1.5f;//跳跃高度
     float velocity;//y轴速度
+
+    //固定方向跳跃
+    bool jumpByDirection = false;
+    Direction direction;
+    float jumpByDirectionTime;
+
     public override void StateStart()
     {
+        jumpByDirection = false;
         velocity = Mathf.Sqrt(2 * player.G * jumpH);//v = √2gh
     }
     public override void StateUpdate()
     {
-        HandleInput();//检测输入
+        if(!jumpByDirection)HandleInput();//检测输入
         transform.Translate(Vector3.up * Time.deltaTime * velocity);//垂直移动
         velocity -= player.G * Time.deltaTime;//模拟重力
+
+        //固定方向跳跃（由攀爬状态切换来）
+        if (jumpByDirection)
+        {
+            if (direction == Direction.Left)
+            {
+                transform.Translate(Vector3.right * Time.deltaTime * player.speed);//左侧墙向右跳
+            }
+            else
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * player.speed);//右侧墙向左跳
+            }
+            jumpByDirectionTime += Time.deltaTime;
+            transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * player.speed/2 * Time.deltaTime);
+            if (jumpByDirectionTime >= 0.25f)
+            {
+                jumpByDirection = false;
+            }
+        }
 
         //触地判定
         List<RaycastHit2D> hits = new List<RaycastHit2D>();
@@ -60,6 +86,36 @@ public class Jump : PlayerState
                 }
             }
         }
+
+        //攀爬判定
+        hits.Clear();
+        for (int i = 0; i < player.rayX; i++)
+        {
+            hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(player.width / 2, -player.height / 2 + i * player.height / (player.rayX - 1)), Vector2.right, player.speed * Time.deltaTime, ~(1 << 8)));
+        }
+        foreach (RaycastHit2D h in hits)
+        {
+            if (h.collider && !h.collider.isTrigger)
+            {
+                ChangeStateTo(StateType.Climb);//Jump -> Climb
+                transform.position = new Vector3(h.point.x - player.width / 2 - player.speed * Time.deltaTime, transform.position.y, 0);
+                return;
+            }
+        }
+        hits.Clear();
+        for (int i = 0; i < player.rayX; i++)
+        {
+            hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(-player.width / 2, -player.height / 2 + i * player.height / (player.rayX - 1)), Vector2.left, player.speed * Time.deltaTime, ~(1 << 8)));
+        }
+        foreach (RaycastHit2D h in hits)
+        {
+            if (h.collider && !h.collider.isTrigger)
+            {
+                ChangeStateTo(StateType.Climb);//Jump -> Climb
+                transform.position = new Vector3(h.point.x + player.width / 2 + player.speed * Time.deltaTime, transform.position.y, 0);
+                return;
+            }
+        }
     }
     public override void HandleInput()
     {
@@ -68,5 +124,11 @@ public class Jump : PlayerState
     public override void SetType()
     {
         stateType = StateType.Jump;
+    }
+    public void JumpByDirection(Direction dir)
+    {
+        jumpByDirectionTime = 0;
+        jumpByDirection = true;
+        direction = dir;
     }
 }

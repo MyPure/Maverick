@@ -3,7 +3,10 @@ guid: 508ae09946db98b44873d0ac4ac07b50
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - standSprite: {fileID: 21300000, guid: 8cdc2e40b8fe71c48983171ba19ff042, type: 3}
+  - squatSprite: {fileID: 21300016, guid: 8cdc2e40b8fe71c48983171ba19ff042, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

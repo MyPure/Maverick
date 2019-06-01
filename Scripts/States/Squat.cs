@@ -76,7 +76,7 @@ public class Squat : PlayerState
         }
 
         //跳跃检测
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && canStand)
         {
             GetComponent<SpriteRenderer>().sprite = standSprite;
             ChangeStateTo(StateType.Jump);//Squat -> Jump
