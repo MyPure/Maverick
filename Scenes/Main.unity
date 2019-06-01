@@ -419,16 +419,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8682537959253504549, guid: 32e4c698db5555d4396589f4d871b25c,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990309405962662133, guid: 32e4c698db5555d4396589f4d871b25c,
-        type: 3}
-      propertyPath: order
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32e4c698db5555d4396589f4d871b25c, type: 3}
 --- !u!1001 &133616469
@@ -1522,7 +1512,7 @@ PrefabInstance:
     - target: {fileID: 9080834860555595169, guid: 32e4c698db5555d4396589f4d871b25c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.21
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 9080834860555595169, guid: 32e4c698db5555d4396589f4d871b25c,
         type: 3}
@@ -1598,20 +1588,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3185532746571479614}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1422941885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422941884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69fd69c2e4d129843a2663e1988df12f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DeadUI: {fileID: 8539537988739782524, guid: 70a847eabb4572d4ca2620f62a7181aa, type: 3}
-  rig: {fileID: 0}
 --- !u!1001 &1423642859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2181,23 +2157,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3185532745821725951, guid: 177f044432dd572479fccadc4cb2e48b,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8cdc2e40b8fe71c48983171ba19ff042,
-        type: 3}
-    - target: {fileID: 7782426678128537790, guid: 177f044432dd572479fccadc4cb2e48b,
-        type: 3}
-      propertyPath: standSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8cdc2e40b8fe71c48983171ba19ff042,
-        type: 3}
-    - target: {fileID: 7782426678128537790, guid: 177f044432dd572479fccadc4cb2e48b,
-        type: 3}
-      propertyPath: squatSprite
-      value: 
-      objectReference: {fileID: 21300016, guid: 8cdc2e40b8fe71c48983171ba19ff042,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 177f044432dd572479fccadc4cb2e48b, type: 3}

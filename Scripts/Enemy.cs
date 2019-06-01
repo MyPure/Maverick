@@ -15,9 +15,14 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        //查找玩家
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player");
-        
+
+        //确保有碰撞盒
+        if (gameObject.GetComponent<BoxCollider2D>() == null)
+            gameObject.AddComponent<BoxCollider2D>();
+        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
     }
 
     //使用的是触发器，也可以使用碰撞器

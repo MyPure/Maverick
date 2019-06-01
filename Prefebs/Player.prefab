@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7782426678128537790}
   - component: {fileID: 1422941891}
   - component: {fileID: 1422941892}
+  - component: {fileID: 1422941885}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -185,6 +186,8 @@ MonoBehaviour:
   stateType: 0
   player: {fileID: 0}
   squatHeight: 1
+  standSprite: {fileID: 21300000, guid: 8cdc2e40b8fe71c48983171ba19ff042, type: 3}
+  squatSprite: {fileID: 21300016, guid: 8cdc2e40b8fe71c48983171ba19ff042, type: 3}
 --- !u!61 &1422941891
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -232,3 +235,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1422941885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3185532745821725826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69fd69c2e4d129843a2663e1988df12f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeadUI: {fileID: 8539537988739782524, guid: 70a847eabb4572d4ca2620f62a7181aa, type: 3}

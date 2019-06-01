@@ -34,7 +34,8 @@ public class DropDetection : MonoBehaviour
         List<Component> comList = new List<Component>();
         foreach (var component in gameObject.GetComponents<Component>())
         {
-            if (component is Transform || component is DropDetection);
+            if (component is Transform || component is DropDetection)
+                ;
             else
                 comList.Add(component);
         }

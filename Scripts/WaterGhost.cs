@@ -10,8 +10,17 @@ public class WaterGhost : MonoBehaviour
     Vector3 up;
     Vector3 down;
     public GameObject platform;
+
+    //敌人组件和碰撞盒
+    Enemy enemy;
+    BoxCollider2D boxCollider;
+
     void Start()
     {
+        enemy = GetComponent<Enemy>();
+        enemy.enabled = false;
+        boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider.enabled = false;
         existTime = 0;
     }
 
@@ -38,5 +47,20 @@ public class WaterGhost : MonoBehaviour
             Vector3 d = Vector3.MoveTowards(transform.position, down, 10f * Time.deltaTime);
             transform.Translate(d - transform.position, Space.Self);
         }
+
+        //在上面的时候激活enemy组件，能够伤害到玩家
+        if(transform.position == up)
+        {
+            enemy.enabled = true;
+            boxCollider.enabled = true;
+            Debug.Log("在上面了"+transform.position);
+        }
+        else
+        {
+            enemy.enabled = false;
+            boxCollider.enabled = false;
+        }
+            
+
     }
 }
