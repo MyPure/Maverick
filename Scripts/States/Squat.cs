@@ -81,7 +81,7 @@ public class Squat : PlayerState
         bool canStand = true;
         for (int i = 0; i < player.rayY; i++)
         {
-            hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(-player.width / 2 + i * player.width / (player.rayY - 1), squatHeight - player.height / 2), Vector2.up, player.height - squatHeight + 0.2f, ~(1 << 8)));
+            hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(-player.width / 2 + i * player.width / (player.rayY - 1), squatHeight - player.height / 2), Vector2.up, player.height - squatHeight + 0.02f, ~(1 << 8)));
         }
         for (int i = 0; i < hits.Count; i++)
         {
