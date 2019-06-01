@@ -28,14 +28,14 @@ public class Jump : PlayerState
         {
             if (direction == Direction.Left)
             {
-                transform.Translate(Vector3.right * Time.deltaTime * player.speed);//左侧墙向右跳
+                transform.Translate(Vector3.right * Time.deltaTime * (0.25f - jumpByDirectionTime)/0.25f * player.speed);//左侧墙向右跳
             }
             else
             {
-                transform.Translate(Vector3.left * Time.deltaTime * player.speed);//右侧墙向左跳
+                transform.Translate(Vector3.left * Time.deltaTime * (0.25f - jumpByDirectionTime)/0.25f * player.speed);//右侧墙向左跳
             }
             jumpByDirectionTime += Time.deltaTime;
-            transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * player.speed/2 * Time.deltaTime);
+            transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * player.speed * (1 - (0.25f - jumpByDirectionTime) / 0.25f) * Time.deltaTime);
             if (jumpByDirectionTime >= 0.25f)
             {
                 jumpByDirection = false;
@@ -91,28 +91,28 @@ public class Jump : PlayerState
         hits.Clear();
         for (int i = 0; i < player.rayX; i++)
         {
-            hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(player.width / 2, -player.height / 2 + i * player.height / (player.rayX - 1)), Vector2.right, player.speed * Time.deltaTime, ~(1 << 8)));
+            hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(player.width / 2, -player.height / 2 + i * player.height / (player.rayX - 1)), Vector2.right, 0.02f, ~(1 << 8)));
         }
         foreach (RaycastHit2D h in hits)
         {
             if (h.collider && !h.collider.isTrigger)
             {
                 ChangeStateTo(StateType.Climb);//Jump -> Climb
-                transform.position = new Vector3(h.point.x - player.width / 2 - player.speed * Time.deltaTime, transform.position.y, 0);
+                transform.position = new Vector3(h.point.x - player.width / 2 - 0.02f, transform.position.y, 0);
                 return;
             }
         }
         hits.Clear();
         for (int i = 0; i < player.rayX; i++)
         {
-            hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(-player.width / 2, -player.height / 2 + i * player.height / (player.rayX - 1)), Vector2.left, player.speed * Time.deltaTime, ~(1 << 8)));
+            hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(-player.width / 2, -player.height / 2 + i * player.height / (player.rayX - 1)), Vector2.left, 0.02f, ~(1 << 8)));
         }
         foreach (RaycastHit2D h in hits)
         {
             if (h.collider && !h.collider.isTrigger)
             {
                 ChangeStateTo(StateType.Climb);//Jump -> Climb
-                transform.position = new Vector3(h.point.x + player.width / 2 + player.speed * Time.deltaTime, transform.position.y, 0);
+                transform.position = new Vector3(h.point.x + player.width / 2 + 0.02f, transform.position.y, 0);
                 return;
             }
         }

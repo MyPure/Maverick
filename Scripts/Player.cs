@@ -36,5 +36,6 @@ public class Player : MonoBehaviour
     private void Update()
     {
         currentState.StateUpdate();
+        Debug.Log(currentState);
     }
 }

@@ -26,10 +26,10 @@ public class WaterGhost : MonoBehaviour
 
     void Update()
     {
-        down = platform.transform.position;
-        up = down + Vector3.up * 4.0f;
+        down = platform.transform.position;//水鬼处在砖里的位置
+        up = down + Vector3.up * 4.0f;//水鬼起来的位置
         existTime += Time.deltaTime;
-        if ((int)existTime % 2 == 0)
+        if ((int)existTime % 2 == 0)//时间判断
         {
             state = "up";
         }
@@ -37,9 +37,11 @@ public class WaterGhost : MonoBehaviour
         {
             state = "down";
         }
+
+        //水鬼移动
         if (state == "up" && transform.position != up)
         {
-            Vector3 d = Vector3.MoveTowards(transform.position, up, 10f * Time.deltaTime);
+            Vector3 d = Vector3.MoveTowards(transform.position, up, 10f * Time.deltaTime);//10为速度，可修改
             transform.Translate(d - transform.position, Space.Self);
         }
         else if (state == "down" && transform.position != down)
@@ -53,7 +55,6 @@ public class WaterGhost : MonoBehaviour
         {
             enemy.enabled = true;
             boxCollider.enabled = true;
-            Debug.Log("在上面了"+transform.position);
         }
         else
         {

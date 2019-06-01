@@ -6,6 +6,8 @@ public class Squat : PlayerState
 {
     public float squatHeight = 1.0f;
     public Sprite standSprite , squatSprite;
+    float velocity;
+
     public override void HandleInput()
     {
         if (Input.GetAxis("Horizontal") > 0)
@@ -48,42 +50,16 @@ public class Squat : PlayerState
     public override void StateStart()
     {
         GetComponent<SpriteRenderer>().sprite = squatSprite;
+        velocity = 0;
     }
     public override void StateUpdate()
     {
         HandleInput();//移动检测
 
-        //站立检测
         List<RaycastHit2D> hits = new List<RaycastHit2D>();
-        bool canStand = true;
-        for (int i = 0; i < player.rayY; i++)
-        {
-            hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(-player.width / 2 + i * player.width / (player.rayY - 1), squatHeight - player.height / 2), Vector2.up, player.height - squatHeight , ~(1 << 8)));
-        }
-        for (int i = 0; i < hits.Count; i++)
-        {
-            if (hits[i].collider && !hits[i].collider.isTrigger)
-            {
-                canStand = false;
-                break;
-            }
-        }
-        if (!Input.GetKey(KeyCode.S) && canStand)
-        {
-            GetComponent<SpriteRenderer>().sprite = standSprite;
-            ChangeStateTo(StateType.Stand);//Squat -> Stand
-            return;
-        }
-
-        //跳跃检测
-        if (Input.GetKey(KeyCode.Space) && canStand)
-        {
-            GetComponent<SpriteRenderer>().sprite = standSprite;
-            ChangeStateTo(StateType.Jump);//Squat -> Jump
-            return;
-        }
 
         //掉落检测
+        hits.Clear();
         for (int i = 0; i < player.rayY; i++)
         {
             hits.Add(Physics2D.Raycast((Vector2)transform.position - new Vector2(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2), Vector2.down, 0.1f, ~(1 << 8)));
@@ -99,13 +75,50 @@ public class Squat : PlayerState
                 break;
             }
         }
-        if (!onGround)
+
+        //站立检测
+        hits.Clear();
+        bool canStand = true;
+        for (int i = 0; i < player.rayY; i++)
+        {
+            hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(-player.width / 2 + i * player.width / (player.rayY - 1), squatHeight - player.height / 2), Vector2.up, player.height - squatHeight + 0.2f, ~(1 << 8)));
+        }
+        for (int i = 0; i < hits.Count; i++)
+        {
+            if (hits[i].collider && !hits[i].collider.isTrigger)
+            {
+                canStand = false;
+                break;
+            }
+        }
+        if (!Input.GetKey(KeyCode.S) && canStand && onGround)
         {
             GetComponent<SpriteRenderer>().sprite = standSprite;
-            ChangeStateTo(StateType.Drop);//Squat -> Drop
+            ChangeStateTo(StateType.Stand);//Squat -> Stand
             return;
         }
 
+        //跳跃检测
+        if (Input.GetKey(KeyCode.Space) && canStand)
+        {
+            GetComponent<SpriteRenderer>().sprite = standSprite;
+            ChangeStateTo(StateType.Jump);//Squat -> Jump
+            return;
+        }
+
+        //掉落判定
+        if (!onGround && canStand)
+        {
+            GetComponent<SpriteRenderer>().sprite = standSprite;
+            ChangeStateTo(StateType.Drop);//Squat -> Drop
+            GetComponent<Drop>().velocity = velocity;
+            return;
+        }
+        else if(!onGround && !canStand)//蹲下状态并且不能站起来的掉落
+        {
+            transform.Translate(Vector3.up * Time.deltaTime * velocity);
+            velocity -= player.G * Time.deltaTime;
+        }
     }
     public override void SetType()
     {

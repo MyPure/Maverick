@@ -58,32 +58,31 @@ public class DoubleJump : PlayerState
         }
 
         //攀爬判定
-        //攀爬判定
         hits.Clear();
         for (int i = 0; i < player.rayX; i++)
         {
-            hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(player.width / 2, -player.height / 2 + i * player.height / (player.rayX - 1)), Vector2.right, player.speed * Time.deltaTime, ~(1 << 8)));
+            hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(player.width / 2, -player.height / 2 + i * player.height / (player.rayX - 1)), Vector2.right, 0.02f, ~(1 << 8)));
         }
         foreach (RaycastHit2D h in hits)
         {
             if (h.collider && !h.collider.isTrigger)
             {
                 ChangeStateTo(StateType.Climb);//Jump -> Climb
-                transform.position = new Vector3(h.point.x - player.width / 2 - player.speed * Time.deltaTime, transform.position.y, 0);
+                transform.position = new Vector3(h.point.x - player.width / 2 - 0.02f, transform.position.y, 0);
                 return;
             }
         }
         hits.Clear();
         for (int i = 0; i < player.rayX; i++)
         {
-            hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(-player.width / 2, -player.height / 2 + i * player.height / (player.rayX - 1)), Vector2.left, player.speed * Time.deltaTime, ~(1 << 8)));
+            hits.Add(Physics2D.Raycast((Vector2)transform.position + new Vector2(-player.width / 2, -player.height / 2 + i * player.height / (player.rayX - 1)), Vector2.left, 0.02f, ~(1 << 8)));
         }
         foreach (RaycastHit2D h in hits)
         {
             if (h.collider && !h.collider.isTrigger)
             {
                 ChangeStateTo(StateType.Climb);//Jump -> Climb
-                transform.position = new Vector3(h.point.x + player.width / 2 + player.speed * Time.deltaTime, transform.position.y, 0);
+                transform.position = new Vector3(h.point.x + player.width / 2 + 0.02f, transform.position.y, 0);
                 return;
             }
         }
