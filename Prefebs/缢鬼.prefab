@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 584096695448021929}
   - component: {fileID: 584096695448021930}
+  - component: {fileID: 7096940847217862305}
   m_Layer: 0
   m_Name: TheGhost
   m_TagString: Untagged
@@ -79,6 +80,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7096940847217862305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584096695448021928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb3f5ac9a674ce41829bb0323596fc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  DeadUI: {fileID: 8539537988739782524, guid: 70a847eabb4572d4ca2620f62a7181aa, type: 3}
 --- !u!1 &584096695561707378
 GameObject:
   m_ObjectHideFlags: 0
