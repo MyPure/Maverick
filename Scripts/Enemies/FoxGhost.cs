@@ -10,12 +10,16 @@ public class FoxGhost : MonoBehaviour
 
     private SpriteRenderer sprite;
 
+    private Rigidbody2D rig;
+
     void Start()
     {
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player");
 
         sprite = GetComponent<SpriteRenderer>();
+
+        rig = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -26,7 +30,7 @@ public class FoxGhost : MonoBehaviour
         if (Mathf.Abs(gameObject.transform.position.x - player.transform.position.x) < 10)
         {
             //移动
-            gameObject.transform.position += new Vector3(-moveSpeed*Time.deltaTime,0,0);
+            gameObject.transform.position += new Vector3(-moveSpeed * Time.deltaTime, 0, 0);
         }
 
         //修改透明度
@@ -46,5 +50,15 @@ public class FoxGhost : MonoBehaviour
             alpha =  t - 3.5f;
         
         return Mathf.Clamp(alpha,0,1);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.tag != "Player")
+        {
+            Vector3 displacement = gameObject.transform.position - collision.transform.position;
+            if (Mathf.Abs(displacement.y) < 0.5f)
+                moveSpeed = -moveSpeed;
+        }
     }
 }
