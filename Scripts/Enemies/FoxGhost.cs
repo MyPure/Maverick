@@ -36,7 +36,10 @@ public class FoxGhost : MonoBehaviour
         //修改透明度
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, getAlpha(Time.time));
 
-
+        if (transform.position.y < 10)
+        {
+            Destroy(gameObject);
+        }
     }
 
     //一个周期为4的周期函数
