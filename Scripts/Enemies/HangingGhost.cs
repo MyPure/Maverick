@@ -12,6 +12,6 @@ public class HangingGhost : MonoBehaviour
 
     void Update()
     {
-        transform.localEulerAngles = new Vector3(0, 0, angle * Mathf.Cos(rotateSpeed * Time.time));
+        transform.localEulerAngles = new Vector3(0, 0, angle * Mathf.Sin(rotateSpeed * Time.time));
     }
 }
