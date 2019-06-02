@@ -23,11 +23,11 @@ public class FoxGhost : MonoBehaviour
     {
 
         //和玩家的距离小于10的时候向左移动
-        //if (Mathf.Abs(gameObject.transform.position.x - player.transform.position.x) < 10)
-        //{
+        if (Mathf.Abs(gameObject.transform.position.x - player.transform.position.x) < 10)
+        {
             //移动
             gameObject.transform.position += new Vector3(-moveSpeed*Time.deltaTime,0,0);
-        //}
+        }
 
         //修改透明度
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, getAlpha(Time.time));
