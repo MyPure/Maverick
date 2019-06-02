@@ -55,7 +55,6 @@ public class CollectableItem : MonoBehaviour
         }
 
         //显示到HUD上
-        collectionManager.Refresh();
 
         //播放音效
         yield return null;
