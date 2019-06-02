@@ -36,7 +36,7 @@ public class FoxGhost : MonoBehaviour
         //修改透明度
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, getAlpha(Time.time));
 
-        if (transform.position.y < 10)
+        if (transform.position.y < -10)
         {
             Destroy(gameObject);
         }
