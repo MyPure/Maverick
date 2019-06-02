@@ -21,4 +21,20 @@ public class ButtonAction : MonoBehaviour
         SceneManager.LoadScene("Main");
         Debug.Log("再来一次");
     }
+
+    /// <summary>
+    /// 加载游戏
+    /// </summary>
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
+    /// <summary>
+    /// 离开游戏
+    /// </summary>
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
