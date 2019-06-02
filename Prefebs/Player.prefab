@@ -115,6 +115,7 @@ MonoBehaviour:
   G: 20
   rayY: 4
   rayX: 6
+  collectionManager: {fileID: 0}
 --- !u!114 &3185532745821725825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateType: 0
   player: {fileID: 0}
+  velocity: 0
+  doubleJump: {fileID: 0}
 --- !u!114 &3185532745821725824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +147,7 @@ MonoBehaviour:
   stateType: 0
   player: {fileID: 0}
   jumpH: 1.5
+  doubleJump: {fileID: 0}
 --- !u!114 &3185532745821725827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +177,7 @@ MonoBehaviour:
   stateType: 0
   player: {fileID: 0}
   jumpH: 1.5
+  cost: 2
 --- !u!114 &7782426678128537790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateType: 0
   player: {fileID: 0}
-  squatHeight: 1
+  squatHeight: 0.2
   standSprite: {fileID: 21300000, guid: 8cdc2e40b8fe71c48983171ba19ff042, type: 3}
   squatSprite: {fileID: 21300016, guid: 8cdc2e40b8fe71c48983171ba19ff042, type: 3}
 --- !u!114 &6007908598774719268
