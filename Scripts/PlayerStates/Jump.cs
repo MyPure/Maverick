@@ -7,6 +7,9 @@ public class Jump : PlayerState
     public float jumpH = 1.5f;//跳跃高度
     float velocity;//y轴速度
 
+    [HideInInspector]
+    public DoubleJump doubleJump;
+
     //固定方向跳跃
     bool jumpByDirection = false;
     Direction direction;
@@ -14,6 +17,7 @@ public class Jump : PlayerState
 
     public override void StateStart()
     {
+        doubleJump = GetComponent<DoubleJump>();
         jumpByDirection = false;
         velocity = Mathf.Sqrt(2 * player.G * jumpH);//v = √2gh
     }
@@ -62,8 +66,9 @@ public class Jump : PlayerState
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && player.collectionManager.Count_Fragment >= doubleJump.cost)
         {
+            player.collectionManager.Count_Fragment -= doubleJump.cost;
             ChangeStateTo(StateType.DoubleJump);//Jump -> DoubleJump
             return;
         }

@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Drop : PlayerState
 {
-    //[HideInInspector]
+    [HideInInspector]
     public float velocity;
+    [HideInInspector]
+    public DoubleJump doubleJump;
     public override void StateStart()
     {
+        doubleJump = GetComponent<DoubleJump>();
         velocity = 0;
     }
     public override void StateUpdate()
@@ -30,8 +33,9 @@ public class Drop : PlayerState
                 return;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && player.collectionManager.Count_Fragment >= doubleJump.cost)
         {
+            player.collectionManager.Count_Fragment -= doubleJump.cost;
             ChangeStateTo(StateType.DoubleJump);//Drop -> DoubleJump
             return;
         }

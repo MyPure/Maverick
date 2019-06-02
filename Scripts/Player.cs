@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public float G = 20.0f;//角色受到的重力
     public int rayY = 3;//竖直方向发射的射线数量
     public int rayX = 5;//水平方向发射的射线数量
+    public CollectionManager collectionManager;
     /// <summary>
     /// 状态在第一次运行或切换时调用
     /// </summary>
@@ -22,6 +23,11 @@ public class Player : MonoBehaviour
             //进行状态默认设置
             state.player = this;
             state.SetType();
+        }
+        //收集物品管理
+        if (!collectionManager)
+        {
+            collectionManager = GameObject.Find("CollectionManager").GetComponent<CollectionManager>();
         }
         //设置默认状态
         if (!currentState)
@@ -36,6 +42,5 @@ public class Player : MonoBehaviour
     private void Update()
     {
         currentState.StateUpdate();
-        Debug.Log(currentState);
     }
 }

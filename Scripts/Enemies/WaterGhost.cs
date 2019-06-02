@@ -6,7 +6,6 @@ using UnityEngine;
 public class WaterGhost : MonoBehaviour
 {
     string state;
-    float existTime = 0;
     Vector3 up;
     Vector3 down;
     public GameObject platform;
@@ -21,15 +20,13 @@ public class WaterGhost : MonoBehaviour
         enemy.enabled = false;
         boxCollider = GetComponent<BoxCollider2D>();
         boxCollider.enabled = false;
-        existTime = 0;
     }
 
     void Update()
     {
         down = platform.transform.position;//水鬼处在砖里的位置
         up = down + Vector3.up * 4.0f;//水鬼起来的位置
-        existTime += Time.deltaTime;
-        if ((int)existTime % 2 == 0)//时间判断
+        if ((int)Time.time % 2 == 0)//时间判断
         {
             state = "up";
         }
