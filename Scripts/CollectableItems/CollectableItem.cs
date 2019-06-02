@@ -43,14 +43,11 @@ public class CollectableItem : MonoBehaviour
         {
             case ItemCode.元神碎片:
                 collectionManager.Count_Fragment += 10;
-                Debug.Log("当前元神碎片的数量是" + collectionManager.Count_Fragment);
                 break;
             case ItemCode.鬼门卯:
                 collectionManager.Count_GhostDoorMortise++;
-                Debug.Log("当前鬼门卯的数量是" + collectionManager.Count_GhostDoorMortise);
                 break;
             default:
-                Debug.Log("收集到了奇怪的东西");
                 break;
         }
 
