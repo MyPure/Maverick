@@ -30,7 +30,7 @@ public class CollectableItem : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if(collision.tag == "Player")          
         {
             StartCoroutine(Disappear());
         }
@@ -55,7 +55,7 @@ public class CollectableItem : MonoBehaviour
         }
 
         //显示到HUD上
-
+        
         //播放音效
         yield return null;
 

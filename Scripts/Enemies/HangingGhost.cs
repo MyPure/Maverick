@@ -10,8 +10,16 @@ public class HangingGhost : MonoBehaviour
     //旋转角度
     public float angle;
 
+    //
+    float existTime;
+
+    private void Start()
+    {
+        existTime = 0;
+    }
     void Update()
     {
-        transform.localEulerAngles = new Vector3(0, 0, angle * Mathf.Sin(rotateSpeed * Time.time));
+        existTime += Time.deltaTime;
+        transform.localEulerAngles = new Vector3(0, 0, angle * Mathf.Sin(rotateSpeed * existTime));
     }
 }

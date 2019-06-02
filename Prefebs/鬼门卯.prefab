@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
+  collectionManager: {fileID: 0}
 --- !u!61 &143745173359599966
 BoxCollider2D:
   m_ObjectHideFlags: 0

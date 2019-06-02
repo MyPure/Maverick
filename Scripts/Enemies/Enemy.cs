@@ -38,9 +38,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            Debug.Log(gameObject.name + "碰到玩家了");
-            Instantiate(DeadUI);
-            Destroy(player);
+            player.GetComponent<Player>().Die();
         }
 
     }

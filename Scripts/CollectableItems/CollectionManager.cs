@@ -12,7 +12,6 @@ public class CollectionManager : MonoBehaviour
     private void Start()
     {
         Count_Fragment = Count_GhostDoorMortise = 0;
-
     }
     void Update()
     {

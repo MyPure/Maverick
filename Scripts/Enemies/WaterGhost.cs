@@ -48,17 +48,23 @@ public class WaterGhost : MonoBehaviour
         }
 
         //在上面的时候激活enemy组件，能够伤害到玩家
-        if(transform.position == up)
+        if (platform.GetComponent<Platform>().velocity == 0)
         {
-            enemy.enabled = true;
-            boxCollider.enabled = true;
+            if (transform.position == up)
+            {
+                enemy.enabled = true;
+                boxCollider.enabled = true;
+            }
+            else
+            {
+                enemy.enabled = false;
+                boxCollider.enabled = false;
+            }
         }
-        else
+        else//当砖块开始掉落的时候水鬼不起作用
         {
             enemy.enabled = false;
             boxCollider.enabled = false;
         }
-            
-
     }
 }

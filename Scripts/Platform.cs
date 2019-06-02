@@ -25,7 +25,7 @@ public class Platform : MonoBehaviour
         }
     }
 
-    float velocity = 0;
+    public float velocity = 0;
     void drop()
     {
         GetComponent<Collider2D>().enabled = false;
