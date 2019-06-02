@@ -25,6 +25,7 @@ public class Platform : MonoBehaviour
         }
     }
 
+    [HideInInspector]
     public float velocity = 0;
     void drop()
     {
