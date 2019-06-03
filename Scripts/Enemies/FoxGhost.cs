@@ -12,6 +12,9 @@ public class FoxGhost : MonoBehaviour
 
     private Rigidbody2D rig;
 
+    public float hideDistance = 2.0f;
+    public float showDistance = 2.0f;
+
     void Start()
     {
         if (player == null)
@@ -42,17 +45,29 @@ public class FoxGhost : MonoBehaviour
         }
     }
 
-    //一个周期为4的周期函数
+    //根据移动距离计算隐身 
+    //(-----a------c------b-----) ：一个周期（隐身和现形不一定一样长）
+    //  隐身|    现形     | 隐身
     float getAlpha(float t)
     {
-        t %= 4;
-        float alpha = 0;
-        if(t >= 0 && t <= 2)
-            alpha = -t + 0.5f;
+        float td = (hideDistance + showDistance) / moveSpeed;//一个周期的总时间
+        t %= td;
+        float a = hideDistance / moveSpeed / 2, b = td - hideDistance / moveSpeed / 2;
+        float c = td / 2;
+        float result;
+        if (t <= a || t>= b)
+        {
+            result = 0;
+        }
+        else if(t > a && t < c)
+        {
+            result = (t - a) / (c - a);
+        }
         else
-            alpha =  t - 3.5f;
-        
-        return Mathf.Clamp(alpha,0,1);
+        {
+            result = (b - t) / (b - c);
+        }
+        return result;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

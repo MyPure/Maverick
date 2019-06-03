@@ -10,6 +10,8 @@ public class WaterGhost : MonoBehaviour
     Vector3 down;
     public GameObject platform;
 
+    public float upTime = 1.0f;//上升时间
+    public float downTime = 1.0f;//下降时间
     //敌人组件和碰撞盒
     Enemy enemy;
     BoxCollider2D boxCollider;
@@ -26,7 +28,9 @@ public class WaterGhost : MonoBehaviour
     {
         down = platform.transform.position;//水鬼处在砖里的位置
         up = down + Vector3.up * 4.0f;//水鬼起来的位置
-        if ((int)Time.time % 2 == 0)//时间判断
+
+        float td = upTime + downTime;//一个周期的总时间
+        if (Time.time % td < upTime)
         {
             state = "up";
         }

@@ -19,10 +19,10 @@ public class Enemy : MonoBehaviour
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player");
 
-        //确保有碰撞盒
-        if (gameObject.GetComponent<BoxCollider2D>() == null)
-            gameObject.AddComponent<BoxCollider2D>();
-        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+        //确保有碰撞盒(部分敌人碰撞体不是方形）
+        //if (gameObject.GetComponent<BoxCollider2D>() == null)
+        //    gameObject.AddComponent<BoxCollider2D>();
+        //gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
