@@ -24,11 +24,15 @@ public class ButtonAction : MonoBehaviour
     /// <summary>
     /// 加载游戏
     /// </summary>
-    public void LoadGame()
+    public void LoadGame1()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Level 1");
     }
 
+    public void LoadGame2()
+    {
+        SceneManager.LoadScene("Level 2");
+    }
     /// <summary>
     /// 离开游戏
     /// </summary>
