@@ -19,7 +19,6 @@ public class ButtonAction : MonoBehaviour
     public void TryAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Debug.Log("再来一次");
     }
 
     /// <summary>
