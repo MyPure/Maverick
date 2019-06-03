@@ -12,10 +12,17 @@ public class CollectionManager : MonoBehaviour
     private void Start()
     {
         Count_Fragment = Count_GhostDoorMortise = 0;
+        text_fragment = Fragment.GetComponent<Text>();
+        text_ghostDoorMortise = GhostDoorMortise.GetComponent<Text>();
     }
+
+    private Text text_fragment;
+
+    private Text text_ghostDoorMortise;
+
     void Update()
     {
-        Fragment.GetComponent<Text>().text = Count_Fragment.ToString();
-        GhostDoorMortise.GetComponent<Text>().text = Count_GhostDoorMortise.ToString();
+        text_fragment.text = Count_Fragment.ToString();
+        text_ghostDoorMortise.text = Count_GhostDoorMortise.ToString();
     }
 }

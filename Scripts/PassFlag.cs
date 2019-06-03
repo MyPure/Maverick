@@ -13,7 +13,8 @@ public class PassFlag : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        if(GameObject.Find("GameController") != null)
+            gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -29,7 +30,7 @@ public class PassFlag : MonoBehaviour
             Debug.Log("加载下一个关卡");
             //加载下一个关卡
             if (gameController == null)
-                SceneManager.LoadScene("Level " + EditorNowLevel);
+                SceneManager.LoadScene("Level " + (EditorNowLevel+1));
             else
                 gameController.LoadNext();
         }
