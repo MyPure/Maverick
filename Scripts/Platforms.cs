@@ -19,7 +19,6 @@ public class PlatformsEditor : Editor
         {
             List<Platform> platforms = new List<Platform>(((Platforms)target).GetComponentsInChildren<Platform>());
             platforms.Sort();
-            int j = 0;
             for(int i = 0; i < platforms.Count; i++)
             {
                 if (i > 0)
