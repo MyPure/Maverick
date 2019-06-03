@@ -10,7 +10,7 @@ public class CameraFollow : MonoBehaviour
     {
         preset = transform.position - target.transform.position;
     }
-    void LateUpdate()
+    void Update()
     {
         Vector2 d = (Vector2)target.transform.position + preset;
         Vector3 destination = new Vector3(d.x, d.y, transform.position.z);
