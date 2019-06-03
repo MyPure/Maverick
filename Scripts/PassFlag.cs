@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PassFlag : MonoBehaviour
 {
+    //编辑器的当前关卡，仅供调试
+    public int EditorNowLevel;
+
     private GameController gameController;
 
     // Start is called before the first frame update
@@ -24,7 +28,10 @@ public class PassFlag : MonoBehaviour
         {
             Debug.Log("加载下一个关卡");
             //加载下一个关卡
-            gameController.LoadNext();
+            if (gameController == null)
+                SceneManager.LoadScene("Level " + EditorNowLevel);
+            else
+                gameController.LoadNext();
         }
     }
 }

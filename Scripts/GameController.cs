@@ -16,6 +16,16 @@ public class GameController : MonoBehaviour
     public void LoadNext()
     {
         nowLevel++;
+        LoadLevel(nowLevel);
+    }
+
+    /// <summary>
+    /// 加载特定关卡
+    /// </summary>
+    public void LoadLevel(int i)
+    {
+        //更新当前关卡
+        nowLevel = i;
 
         //加载下一个关卡
         if(SceneManager.GetSceneByName("Level " + nowLevel) != null)
@@ -23,7 +33,7 @@ public class GameController : MonoBehaviour
         else
         {
             //在此处编写通关逻辑
-            Debug.Log("通关了");
+            Debug.Log("通关了或找不到下一个关卡");
         }
     }
 
