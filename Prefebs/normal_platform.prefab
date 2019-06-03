@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &800452356886089421
 Transform:
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948d19962c821ee4c8bba110f2382997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropInterval: 0.5
   order: 0
+  velocity: 0
 --- !u!61 &703492454170958411
 BoxCollider2D:
   m_ObjectHideFlags: 0

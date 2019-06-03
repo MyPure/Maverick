@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9080834859153206112
 Transform:
@@ -173,6 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 9080834860555595168}
+  upTime: 1
+  downTime: 1
 --- !u!114 &585074959885564629
 MonoBehaviour:
   m_ObjectHideFlags: 0
