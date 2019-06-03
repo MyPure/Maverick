@@ -18,7 +18,7 @@ public class Stand : PlayerState
         List<RaycastHit2D> hits = new List<RaycastHit2D>();
         for (int i = 0; i < player.rayY; i++)
         {
-            hits.Add(Physics2D.Raycast((Vector2)transform.position - new Vector2(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2), Vector2.down, 0.03f, ~(1 << 8)));
+            hits.Add(Physics2D.Raycast((Vector2)transform.position - new Vector2(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2), Vector2.down, 0.06f, ~(1 << 8)));
             Debug.DrawLine(transform.position - new Vector3(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2, 0), transform.position - new Vector3(player.width / 2 - i * player.width / (player.rayY - 1), player.height / 2, 0) + Vector3.down * Time.deltaTime, Color.red);
         }
         bool onGround = false;
@@ -28,6 +28,7 @@ public class Stand : PlayerState
             if (hits[i].collider && !hits[i].collider.isTrigger)
             {
                 onGround = true;
+                transform.position = new Vector3(transform.position.x, hits[i].point.y + player.height / 2 + 0.05f, 0);
                 break;
             }
         }

@@ -75,6 +75,7 @@ public class Squat : PlayerState
             if (hits[i].collider && !hits[i].collider.isTrigger)
             {
                 onGround = true;
+                transform.position = new Vector3(transform.position.x, hits[i].point.y + player.height / 2 + 0.05f, 0);
                 break;
             }
         }

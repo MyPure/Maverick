@@ -28,7 +28,7 @@ public class Drop : PlayerState
         {
             if (hits[i].collider && !hits[i].collider.isTrigger)
             {
-                transform.position = new Vector3(transform.position.x, hits[i].point.y + player.height / 2 + 0.02f, 0);
+                transform.position = new Vector3(transform.position.x, hits[i].point.y + player.height / 2 + 0.05f, 0);
                 ChangeStateTo(StateType.Stand);//Drop -> Stand
                 return;
             }

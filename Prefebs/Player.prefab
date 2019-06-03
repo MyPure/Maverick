@@ -209,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateType: 0
   player: {fileID: 0}
-  dropSpeed: 1
+  dropSpeed: 4
 --- !u!50 &1422941892
 Rigidbody2D:
   serializedVersion: 4
@@ -238,7 +238,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3185532745821725826}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
