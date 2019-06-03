@@ -26,7 +26,8 @@ public class ButtonAction : MonoBehaviour
     /// </summary>
     public void LoadGame1()
     {
-        SceneManager.LoadScene("Level 1");
+        GameObject.Find("GameController").GetComponent<GameController>().LoadNext();
+        //SceneManager.LoadScene("Level 1");
     }
 
     public void LoadGame2()
