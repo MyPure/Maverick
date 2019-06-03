@@ -47232,7 +47232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 979893170}
   m_Layer: 0
-  m_Name: obstacle
+  m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
