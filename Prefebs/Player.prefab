@@ -111,7 +111,7 @@ MonoBehaviour:
   height: 2
   width: 1
   speed: 4
-  G: 20
+  G: 30
   rayY: 4
   rayX: 6
   collectionManager: {fileID: 0}
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateType: 0
   player: {fileID: 0}
-  jumpH: 1.5
+  jumpH: 2.5
   doubleJump: {fileID: 0}
 --- !u!114 &3185532745821725827
 MonoBehaviour:
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateType: 0
   player: {fileID: 0}
-  jumpH: 1.5
+  jumpH: 2.5
   cost: 2
 --- !u!114 &7782426678128537790
 MonoBehaviour:
