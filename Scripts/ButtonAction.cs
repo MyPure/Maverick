@@ -42,11 +42,11 @@ public class ButtonAction : MonoBehaviour
     }
 
     /// <summary>
-    /// 调用图鉴
+    /// 实例化对象（一般是UI）
     /// </summary>
-    public void GhostInstruction(GameObject InstructionUI)
+    public void InstantiateGameObject(GameObject obj)
     {
-        Instantiate(InstructionUI);
+        Instantiate(obj);
     }
 
     /// <summary>
@@ -62,4 +62,5 @@ public class ButtonAction : MonoBehaviour
 
         Destroy(gameObject.transform.parent.gameObject);
     }
+
 }
