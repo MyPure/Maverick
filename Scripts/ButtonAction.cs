@@ -40,4 +40,26 @@ public class ButtonAction : MonoBehaviour
     {
         Application.Quit();
     }
+
+    /// <summary>
+    /// 调用图鉴
+    /// </summary>
+    public void GhostInstruction(GameObject InstructionUI)
+    {
+        Instantiate(InstructionUI);
+    }
+
+    /// <summary>
+    /// 销毁该控件所在的Canvas
+    /// 断言：至少一个他的祖先有canvas组件
+    /// </summary>
+    public void DestroyNowCanvas()
+    {
+        //从关系树往上回溯，直到找到第一个Canvas
+        GameObject nowObj = gameObject.transform.parent.gameObject;
+        while (nowObj.GetComponent<Canvas>() == null)
+            nowObj = nowObj.transform.parent.gameObject;
+
+        Destroy(gameObject.transform.parent.gameObject);
+    }
 }
