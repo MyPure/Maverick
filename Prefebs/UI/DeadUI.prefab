@@ -152,7 +152,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8FD4\u56DE\u4E3B\u9875"
+  m_Text: "\u8FD4\u56DE"
 --- !u!1 &8539537988243165168
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,11 +594,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8539537988916439387}
-        m_MethodName: LoadHome
-        m_Mode: 1
+        m_MethodName: InstantiateGameObject
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2437844164579921465, guid: 0e04277a86196314686d4c7ed740484d,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

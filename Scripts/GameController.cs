@@ -11,6 +11,16 @@ public class GameController : MonoBehaviour
     public int nowLevel = 0;
 
     /// <summary>
+    /// 关卡总数
+    /// </summary>
+    public int levelTotalNum;
+
+    private void Start()
+    {
+        levelTotalNum = 2;
+    }
+
+    /// <summary>
     /// 加载下一个关卡
     /// </summary>
     public void LoadNext()
@@ -27,14 +37,12 @@ public class GameController : MonoBehaviour
         //更新当前关卡
         nowLevel = i;
 
+        //判断是否完全通关
+        if(nowLevel > levelTotalNum)
+            SceneManager.LoadScene("PASS_ALL");
         //加载下一个关卡
-        if(SceneManager.GetSceneByName("Level " + nowLevel) != null)
-            SceneManager.LoadScene("Level " + nowLevel);
         else
-        {
-            //在此处编写通关逻辑
-            Debug.Log("通关了或找不到下一个关卡");
-        }
+            SceneManager.LoadScene("Level " + nowLevel);
     }
 
     private void Awake()
