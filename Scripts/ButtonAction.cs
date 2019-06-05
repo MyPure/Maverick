@@ -20,19 +20,6 @@ public class ButtonAction : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
-    /// <summary>
-    /// 加载游戏
-    /// </summary>
-    public void LoadGame1()
-    {
-        GameObject.Find("GameController").GetComponent<GameController>().LoadLevel(1);
-    }
-
-    public void LoadGame2()
-    {
-        GameObject.Find("GameController").GetComponent<GameController>().LoadLevel(2);
-    }
     /// <summary>
     /// 离开游戏
     /// </summary>
@@ -62,5 +49,15 @@ public class ButtonAction : MonoBehaviour
 
         Destroy(gameObject.transform.parent.gameObject);
     }
+
+    /// <summary>
+    /// 加载场景
+    /// </summary>
+    /// <param name="sceneName"></param>
+    public void LoadScene(int level)
+    {
+        GameObject.Find("GameController").GetComponent<GameController>().LoadLevel(level);
+    }
+
 
 }
