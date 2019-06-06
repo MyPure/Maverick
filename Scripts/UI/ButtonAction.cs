@@ -5,12 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class ButtonAction : MonoBehaviour
 {
+    private GameController gameController;
+    private void Awake()
+    {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+    }
+
     /// <summary>
     /// 加载主页
     /// </summary>
     public void LoadHome()
     {
-        SceneManager.LoadScene("HomeUI");
+        gameController.LoadHome();
+    }
+
+    public void BackToChooseLevel()
+    {
+        gameController.BackToChooseLevel();
     }
 
     /// <summary>
@@ -56,8 +67,11 @@ public class ButtonAction : MonoBehaviour
     /// <param name="sceneName"></param>
     public void LoadScene(int level)
     {
-        GameObject.Find("GameController").GetComponent<GameController>().LoadLevel(level);
+        gameController.LoadLevel(level);
     }
-
+    public void LoadNext()
+    {
+        gameController.LoadNext();
+    }
 
 }

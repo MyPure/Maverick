@@ -8,6 +8,8 @@ public class PassFlag : MonoBehaviour
     //编辑器的当前关卡，仅供调试
     public int EditorNowLevel;
 
+    public GameObject passUI;
+
     private GameController gameController;
 
     // Start is called before the first frame update
@@ -27,12 +29,13 @@ public class PassFlag : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("加载下一个关卡");
-            //加载下一个关卡
-            if (gameController == null)
-                SceneManager.LoadScene("Level " + (EditorNowLevel+1));
-            else
-                gameController.LoadNext();
+            collision.GetComponent<Player>().enabled = false;
+            Debug.Log($"通过第{gameController.nowLevel}关！");
+            if (gameController.passLevel < gameController.nowLevel)
+            {
+                gameController.passLevel = gameController.nowLevel;
+            }
+            Instantiate(passUI);
         }
     }
 }

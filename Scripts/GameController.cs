@@ -5,19 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    /// <summary>
-    /// 当前关卡数
-    /// </summary>
-    public int nowLevel = 0;
-
-    /// <summary>
-    /// 关卡总数
-    /// </summary>
-    public int levelTotalNum;
+    public GameObject chooseLevelUI;
+    public int nowLevel = 0;//当前在第几关
+    public int passLevel = 0;//一共过了几关
+    public int levelTotalNum;// 关卡总数
+    private static bool first = true;//首次启动
 
     private void Start()
     {
-        levelTotalNum = 2;
+        levelTotalNum = 3;
     }
 
     /// <summary>
@@ -45,8 +41,30 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene("Level " + nowLevel);
     }
 
+    public void LoadHome()
+    {
+        nowLevel = 0;
+        SceneManager.LoadScene("HomeUI");
+    }
+
+    public void BackToChooseLevel()
+    {
+        LoadHome();
+        Instantiate(chooseLevelUI);
+    }
+
+    private Save CreatSave()
+    {
+        Save save = new Save();
+        save.passLevel = passLevel;
+        return save;
+    }
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (first)
+        {
+            DontDestroyOnLoad(gameObject);
+            first = false;
+        }
     }
 }
