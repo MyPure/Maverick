@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class GameController : MonoBehaviour
 {
@@ -49,16 +51,46 @@ public class GameController : MonoBehaviour
 
     public void BackToChooseLevel()
     {
+        StartCoroutine(BTC());
+    }
+
+    IEnumerator BTC()
+    {
         LoadHome();
+        yield return null;
         Instantiate(chooseLevelUI);
     }
 
+
+    //创建存档类
     private Save CreatSave()
     {
         Save save = new Save();
         save.passLevel = passLevel;
         return save;
     }
+
+    //保存至文件
+    public void SaveGame()
+    {
+        Save save = CreatSave();
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/save/save.dat");
+        bf.Serialize(file, save);
+        file.Close();
+    }
+
+    public void ClearSave()
+    {
+        Save save = new Save(true);//生成空存档类
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/save/save.dat");
+        bf.Serialize(file, save);
+        file.Close();
+
+        LoadSave(save);
+    }
+
     private void Awake()
     {
         if (first)
@@ -66,5 +98,37 @@ public class GameController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             first = false;
         }
+
+        //读取存档
+        if (File.Exists(Application.persistentDataPath + "/save/save.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/save/save.dat", FileMode.Open);
+            Save save = (Save)bf.Deserialize(file);
+            file.Close();
+
+            LoadSave(save);
+        }
+        else
+        {
+            Save save = new Save(true);
+            BinaryFormatter bf = new BinaryFormatter();
+            if(!Directory.Exists(Application.persistentDataPath + "/save")){
+                Directory.CreateDirectory(Application.persistentDataPath + "/save");
+            }
+            FileStream file = File.Create(Application.persistentDataPath + "/save/save.dat");
+            bf.Serialize(file, save);
+            file.Close();
+            Debug.Log("未找到存档文件，已创建空存档");
+        }
+    }
+
+    /// <summary>
+    /// 把存档内容保存到Gamecontroller中
+    /// </summary>
+    /// <param name="save"></param>
+    private void LoadSave(Save save)
+    {
+        passLevel = save.passLevel;
     }
 }

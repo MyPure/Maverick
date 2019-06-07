@@ -37,6 +37,7 @@ public class ButtonAction : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+        gameController.SaveGame();
     }
 
     /// <summary>
@@ -59,6 +60,11 @@ public class ButtonAction : MonoBehaviour
             nowObj = nowObj.transform.parent.gameObject;
 
         Destroy(gameObject.transform.parent.gameObject);
+    }
+
+    public void ClearSave()
+    {
+        gameController.ClearSave();
     }
 
     /// <summary>
