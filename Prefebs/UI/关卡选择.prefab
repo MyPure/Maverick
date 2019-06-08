@@ -488,6 +488,7 @@ GameObject:
   - component: {fileID: 3095456498914064838}
   - component: {fileID: 8412533407180184669}
   - component: {fileID: 8379809793525672861}
+  - component: {fileID: 1518845041277843588}
   m_Layer: 5
   m_Name: "btn_\u6280\u80FD"
   m_TagString: Untagged
@@ -591,9 +592,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8412533407180184669}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1518845041277843588}
+        m_MethodName: InstantiateGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7089954788153655338, guid: afe3e11f6cca1aa46bde6f82586832eb,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1518845041277843588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339759173799046990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff3200273457cb45ae73c98227a3326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1412519811667596088
 GameObject:
   m_ObjectHideFlags: 0
