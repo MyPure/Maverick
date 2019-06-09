@@ -14,6 +14,10 @@ public class Player : MonoBehaviour
     public int rayX = 5;//水平方向发射的射线数量
     public CollectionManager collectionManager;
     public GameObject DeadUI;
+    public GameObject whiteTiger;
+
+    private static int whiteTigerCount;//使用白虎的次数
+
     /// <summary>
     /// 状态在第一次运行或切换时调用
     /// </summary>
@@ -49,6 +53,14 @@ public class Player : MonoBehaviour
         {
             Die();
         }
+
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.Q) && whiteTigerCount++ < 3)
+        {
+            Transform player = GameObject.Find("Player").transform;
+            Instantiate(whiteTiger, player.position - new Vector3(0,0.5f,0), player.rotation);
+        }
+#endif
     }
     public void Die()
     {

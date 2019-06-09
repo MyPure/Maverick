@@ -31,7 +31,7 @@ public class WhiteTiger : MonoBehaviour
     {
         if (collision.tag == "ENEMY")
         {
-            Debug.Log("碰到敌人了");
+            //Debug.Log("碰到敌人了");
             Destroy(collision.gameObject);
         }
     }
