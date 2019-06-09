@@ -48400,6 +48400,11 @@ PrefabInstance:
       propertyPath: tcamera
       value: 
       objectReference: {fileID: 1734581916}
+    - target: {fileID: 4209150751852940917, guid: 84c4d9de2086f634f93d3409c06ad6a6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.435001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c4d9de2086f634f93d3409c06ad6a6, type: 3}
 --- !u!4 &1822410105 stripped
@@ -50160,10 +50165,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1422941891, guid: 177f044432dd572479fccadc4cb2e48b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 177f044432dd572479fccadc4cb2e48b, type: 3}

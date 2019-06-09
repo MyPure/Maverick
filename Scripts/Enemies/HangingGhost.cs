@@ -10,6 +10,8 @@ public class HangingGhost : MonoBehaviour
     //旋转角度
     public float angle;
 
+    public List<Sprite> sprites;
+
     //
     float existTime;
 
@@ -20,6 +22,7 @@ public class HangingGhost : MonoBehaviour
     void Update()
     {
         existTime += Time.deltaTime;
-        transform.localEulerAngles = new Vector3(0, 0, angle * Mathf.Sin(rotateSpeed * existTime));
+        float currentAngle = angle * Mathf.Sin(rotateSpeed * existTime);
+        transform.localEulerAngles = new Vector3(0, 0, currentAngle);
     }
 }
