@@ -116,6 +116,8 @@ MonoBehaviour:
   rayX: 6
   collectionManager: {fileID: 0}
   DeadUI: {fileID: 8539537988739782524, guid: 70a847eabb4572d4ca2620f62a7181aa, type: 3}
+  whiteTiger: {fileID: 2238276014206851037, guid: f7e2d4c7b69d446449599ff85313076e,
+    type: 3}
 --- !u!114 &3185532745821725825
 MonoBehaviour:
   m_ObjectHideFlags: 0

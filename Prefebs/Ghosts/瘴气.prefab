@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5111510558422746452}
   m_Layer: 0
   m_Name: "\u7634\u6C14"
-  m_TagString: Untagged
+  m_TagString: ENEMY
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

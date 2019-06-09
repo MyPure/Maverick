@@ -209,12 +209,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 556232771}
-        m_MethodName: InstantiateGameObject
-        m_Mode: 2
+        m_MethodName: BackToChooseLevel
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 2437844164579921465, guid: 0e04277a86196314686d4c7ed740484d,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -272,6 +271,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u901A\u5173UI"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989363582451127399, guid: 8e801459d233c604790a8032a0ee0b9b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToChooseLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989363582451127399, guid: 8e801459d233c604790a8032a0ee0b9b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989363582451127399, guid: 8e801459d233c604790a8032a0ee0b9b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7587170330554746490, guid: 8e801459d233c604790a8032a0ee0b9b,
         type: 3}
@@ -377,21 +391,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989363582451127399, guid: 8e801459d233c604790a8032a0ee0b9b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InstantiateGameObject
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989363582451127399, guid: 8e801459d233c604790a8032a0ee0b9b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989363582451127399, guid: 8e801459d233c604790a8032a0ee0b9b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e801459d233c604790a8032a0ee0b9b, type: 3}

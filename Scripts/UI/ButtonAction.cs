@@ -5,12 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class ButtonAction : MonoBehaviour
 {
+    private GameController gameController;
+    private void Awake()
+    {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+    }
+
     /// <summary>
     /// 加载主页
     /// </summary>
     public void LoadHome()
     {
-        SceneManager.LoadScene("HomeUI");
+        gameController.LoadHome();
+    }
+
+    public void BackToChooseLevel()
+    {
+        gameController.BackToChooseLevel();
     }
 
     /// <summary>
@@ -26,6 +37,7 @@ public class ButtonAction : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+        gameController.SaveGame();
     }
 
     /// <summary>
@@ -50,14 +62,22 @@ public class ButtonAction : MonoBehaviour
         Destroy(gameObject.transform.parent.gameObject);
     }
 
+    public void ClearSave()
+    {
+        gameController.ClearSave();
+    }
+
     /// <summary>
     /// 加载场景
     /// </summary>
     /// <param name="sceneName"></param>
     public void LoadScene(int level)
     {
-        GameObject.Find("GameController").GetComponent<GameController>().LoadLevel(level);
+        gameController.LoadLevel(level);
     }
-
+    public void LoadNext()
+    {
+        gameController.LoadNext();
+    }
 
 }
