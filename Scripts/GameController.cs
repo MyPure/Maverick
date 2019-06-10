@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
     /// </summary>
     public void LoadNext()
     {
+        Player.whiteTigerCount = 0;
         nowLevel++;
         LoadLevel(nowLevel);
     }
@@ -34,6 +35,7 @@ public class GameController : MonoBehaviour
     /// </summary>
     public void LoadLevel(int i)
     {
+        Player.whiteTigerCount = 0;
         //更新当前关卡
         nowLevel = i;
 

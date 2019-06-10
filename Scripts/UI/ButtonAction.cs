@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonAction : MonoBehaviour
 {
+    public GameObject failUI;
+    public GameObject successUI;
     private GameController gameController;
     private void Awake()
     {
@@ -80,4 +82,27 @@ public class ButtonAction : MonoBehaviour
         gameController.LoadNext();
     }
 
+    public void 解锁神荼()
+    {
+
+        if (gameController.Count_Fragment >= 50)
+        {
+            gameController.Count_Fragment -= 50;
+            gameController.神荼 = true;
+            InstantiateGameObject(successUI);
+        }
+        else
+            InstantiateGameObject(failUI);
+    }
+    public void 解锁郁垒()
+    {
+        if (gameController.Count_Fragment >= 50)
+        {
+            gameController.Count_Fragment -= 50;
+            gameController.郁垒 = true;
+            InstantiateGameObject(successUI);
+        }
+        else
+            InstantiateGameObject(failUI);
+    }
 }

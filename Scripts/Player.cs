@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public GameObject DeadUI;
     public GameObject whiteTiger;
 
-    private static int whiteTigerCount;//使用白虎的次数
+    public static int whiteTigerCount;//使用白虎的次数
 
     /// <summary>
     /// 状态在第一次运行或切换时调用
@@ -67,10 +67,10 @@ public class Player : MonoBehaviour
             }
             else
             {
-                #if UNITY_EDITOR
-                    Transform player = GameObject.Find("Player").transform;
-                    Instantiate(whiteTiger, player.position - new Vector3(0, 0.5f, 0), player.rotation);
-                #endif
+#if UNITY_EDITOR
+                Transform player = GameObject.Find("Player").transform;
+                Instantiate(whiteTiger, player.position - new Vector3(0, 0.5f, 0), player.rotation);
+#endif
             }
         }
 
