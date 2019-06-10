@@ -6,7 +6,8 @@ using UnityEngine;
 public class Save
 {
     public int passLevel;//一共过了几关
-    public int Count_Fragment, Count_GhostDoorMortise;
+    public int Count_Fragment, Count_GhostDoorMortise;//该物品的数目
+    public bool 神荼, 郁垒;//是否拥有此技能
 
     public Save() { }
     public Save(bool clear)
@@ -14,6 +15,9 @@ public class Save
         if (clear)
         {
             passLevel = 0;
+            Count_Fragment = 0;
+            Count_GhostDoorMortise = 0;
+            神荼 = 郁垒 = false;
         }
     }
 
@@ -23,5 +27,7 @@ public class Save
         passLevel = other.passLevel;
         Count_Fragment = other.Count_Fragment;
         Count_GhostDoorMortise = other.Count_GhostDoorMortise;
+        神荼 = other.神荼;
+        郁垒 = other.郁垒;
     }
 }

@@ -53,15 +53,29 @@ public class Player : MonoBehaviour
         {
             Die();
         }
-
-#if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.Q) && whiteTigerCount++ < 3)
-        {
-            Transform player = GameObject.Find("Player").transform;
-            Instantiate(whiteTiger, player.position - new Vector3(0,0.5f,0), player.rotation);
-        }
-#endif
+        checkWhiteTiger();
     }
+
+    void checkWhiteTiger()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (whiteTigerCount++ < 3 && GameObject.Find("GameController").GetComponent<GameController>().郁垒)
+            {
+                Transform player = GameObject.Find("Player").transform;
+                Instantiate(whiteTiger, player.position - new Vector3(0, 0.5f, 0), player.rotation);
+            }
+            else
+            {
+                #if UNITY_EDITOR
+                    Transform player = GameObject.Find("Player").transform;
+                    Instantiate(whiteTiger, player.position - new Vector3(0, 0.5f, 0), player.rotation);
+                #endif
+            }
+        }
+
+    }
+
     public void Die()
     {
         death = true;
