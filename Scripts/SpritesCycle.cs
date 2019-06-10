@@ -21,7 +21,7 @@ public class SpritesCycle : MonoBehaviour
         for(int i = 0; i < sprites.Count; i++)
         {
             l_position.x += sprites[i].bounds.size.x / 2;
-            sprites[i].transform.localPosition = l_position;
+            sprites[i].transform.localPosition = new Vector3(l_position.x, sprites[i].transform.localPosition.y, 0);
             totalWidth += sprites[i].bounds.size.x;
             l_position.x += sprites[i].bounds.size.x / 2;
         }

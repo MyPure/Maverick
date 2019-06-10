@@ -44,10 +44,12 @@ public class CollectableItem : MonoBehaviour
         switch (itemType)
         {
             case ItemCode.元神碎片:
-                gameController.Count_Fragment += 10;
+                if (gameController)
+                    gameController.Count_Fragment += 10;
                 break;
             case ItemCode.鬼门卯:
-                gameController.Count_GhostDoorMortise++;
+                if (gameController)
+                    gameController.Count_GhostDoorMortise++;
                 break;
             default:
                 break;
