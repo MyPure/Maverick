@@ -115,11 +115,11 @@ RectTransform:
   - {fileID: 215432127243989242}
   - {fileID: 8575781035272458287}
   m_Father: {fileID: 2437844164579921469}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 75, y: 50}
+  m_AnchoredPosition: {x: 75.000015, y: 50.00001}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8238148053558002107
@@ -199,8 +199,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1197242991061736108}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 712336771353559326}
+        m_MethodName: CheckAndLoadSence
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -224,6 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff3200273457cb45ae73c98227a3326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  failUI: {fileID: 0}
+  successUI: {fileID: 0}
 --- !u!114 &712336771353559326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 3
   gameController: {fileID: 0}
+  text: {fileID: 4542197552684942816}
+  image: {fileID: 1145320221477942359}
 --- !u!1 &1003796525628222286
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +433,7 @@ RectTransform:
   m_Children:
   - {fileID: 2021334321271217092}
   m_Father: {fileID: 2437844164579921469}
-  m_RootOrder: 9
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -539,6 +543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff3200273457cb45ae73c98227a3326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  failUI: {fileID: 0}
+  successUI: {fileID: 0}
 --- !u!1 &1412519811667596088
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,17 +885,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2437844163165278128}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2437844162816099609}
   m_Father: {fileID: 2437844164579921469}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 150}
+  m_AnchoredPosition: {x: 0, y: 149.99997}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2437844163165278132
@@ -994,6 +1000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff3200273457cb45ae73c98227a3326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  failUI: {fileID: 0}
+  successUI: {fileID: 0}
 --- !u!114 &6994675114646798869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,6 +1016,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   gameController: {fileID: 0}
+  text: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &2437844163794816380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,11 +1054,11 @@ RectTransform:
   - {fileID: 3890605463233180547}
   - {fileID: 4151142720045369471}
   m_Father: {fileID: 2437844164579921469}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -75, y: 50}
+  m_AnchoredPosition: {x: -74.999985, y: 50.00001}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2437844163794816368
@@ -1128,8 +1138,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2437844163794816371}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 8652737497048334859}
+        m_MethodName: CheckAndLoadSence
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1153,6 +1163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff3200273457cb45ae73c98227a3326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  failUI: {fileID: 0}
+  successUI: {fileID: 0}
 --- !u!114 &8652737497048334859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1167,6 +1179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   gameController: {fileID: 0}
+  text: {fileID: 7433138251567878551}
+  image: {fileID: 1532531445953299677}
 --- !u!1 &2437844163855086868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,7 +1272,7 @@ GameObject:
   - component: {fileID: 2437844164579921466}
   - component: {fileID: 2437844164579921467}
   - component: {fileID: 2437844164579921464}
-  - component: {fileID: 6764884585019632961}
+  - component: {fileID: 4810387177544315107}
   m_Layer: 5
   m_Name: "\u5173\u5361\u9009\u62E9"
   m_TagString: Untagged
@@ -1279,6 +1293,8 @@ RectTransform:
   m_Children:
   - {fileID: 2437844163078640327}
   - {fileID: 6395897306787043809}
+  - {fileID: 6932130814904814462}
+  - {fileID: 4665984814394618463}
   - {fileID: 2437844163165278131}
   - {fileID: 2437844163794816383}
   - {fileID: 8620691960762853302}
@@ -1286,8 +1302,6 @@ RectTransform:
   - {fileID: 2383707029276053577}
   - {fileID: 3819437310481843654}
   - {fileID: 6522981624891533481}
-  - {fileID: 6932130814904814462}
-  - {fileID: 4665984814394618463}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1356,7 +1370,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6764884585019632961
+--- !u!114 &4810387177544315107
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1635,7 +1649,7 @@ RectTransform:
   - {fileID: 3528327691888414442}
   - {fileID: 3492976413718238524}
   m_Father: {fileID: 2437844164579921469}
-  m_RootOrder: 10
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1677,11 +1691,11 @@ RectTransform:
   - {fileID: 6020359405698228453}
   - {fileID: 8233834834089003621}
   m_Father: {fileID: 2437844164579921469}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 75, y: -50}
+  m_AnchoredPosition: {x: 75.000015, y: -50.00001}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2141995686461073391
@@ -1761,13 +1775,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3069076948258768545}
-        m_MethodName: LoadGame2
-        m_Mode: 1
+      - m_Target: {fileID: 2774541537192702375}
+        m_MethodName: CheckAndLoadSence
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1786,6 +1800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff3200273457cb45ae73c98227a3326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  failUI: {fileID: 0}
+  successUI: {fileID: 0}
 --- !u!114 &2774541537192702375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1800,6 +1816,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 5
   gameController: {fileID: 0}
+  text: {fileID: 1670881889691403608}
+  image: {fileID: 0}
 --- !u!1 &4422997360895701870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,11 +2011,11 @@ RectTransform:
   - {fileID: 6030227426303656315}
   - {fileID: 7025845016487853871}
   m_Father: {fileID: 2437844164579921469}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -75, y: -150}
+  m_AnchoredPosition: {x: -74.999985, y: -150}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &362224491550717719
@@ -2077,13 +2095,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8703257342214466121}
-        m_MethodName: LoadGame2
-        m_Mode: 1
+      - m_Target: {fileID: 5874595303176095616}
+        m_MethodName: CheckAndLoadSence
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2102,6 +2120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff3200273457cb45ae73c98227a3326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  failUI: {fileID: 0}
+  successUI: {fileID: 0}
 --- !u!114 &5874595303176095616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2116,6 +2136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 6
   gameController: {fileID: 0}
+  text: {fileID: 173158977841657288}
+  image: {fileID: 0}
 --- !u!1 &5572437519164802153
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,11 +2173,11 @@ RectTransform:
   - {fileID: 1065772774217635075}
   - {fileID: 7529608642881199288}
   m_Father: {fileID: 2437844164579921469}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 75, y: -150}
+  m_AnchoredPosition: {x: 75.000015, y: -150}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2562108627750448108
@@ -2235,13 +2257,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4369406437201579661}
-        m_MethodName: LoadGame2
-        m_Mode: 1
+      - m_Target: {fileID: 8603785270287634132}
+        m_MethodName: CheckAndLoadSence
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2260,6 +2282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff3200273457cb45ae73c98227a3326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  failUI: {fileID: 0}
+  successUI: {fileID: 0}
 --- !u!114 &8603785270287634132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2274,6 +2298,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 7
   gameController: {fileID: 0}
+  text: {fileID: 5268271916073626658}
+  image: {fileID: 0}
 --- !u!1 &5594983398322213871
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,6 +2827,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff3200273457cb45ae73c98227a3326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  failUI: {fileID: 0}
+  successUI: {fileID: 0}
 --- !u!1 &6448579102660764499
 GameObject:
   m_ObjectHideFlags: 0
@@ -2916,11 +2944,11 @@ RectTransform:
   - {fileID: 5808924848400202720}
   - {fileID: 7411367500086295583}
   m_Father: {fileID: 2437844164579921469}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -75, y: -50}
+  m_AnchoredPosition: {x: -74.999985, y: -50.00001}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &525366090645953844
@@ -3000,13 +3028,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7312310648409282772}
-        m_MethodName: LoadGame2
-        m_Mode: 1
+      - m_Target: {fileID: 6872249446193045749}
+        m_MethodName: CheckAndLoadSence
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3025,6 +3053,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff3200273457cb45ae73c98227a3326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  failUI: {fileID: 0}
+  successUI: {fileID: 0}
 --- !u!114 &6872249446193045749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3039,6 +3069,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 4
   gameController: {fileID: 0}
+  text: {fileID: 7341735676737763668}
+  image: {fileID: 0}
 --- !u!1 &7082745723723065749
 GameObject:
   m_ObjectHideFlags: 0

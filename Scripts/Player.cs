@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public int rayY = 3;//竖直方向发射的射线数量
     public int rayX = 5;//水平方向发射的射线数量
     public CollectionManager collectionManager;
+    public GameController gameController;
     public GameObject DeadUI;
     public GameObject whiteTiger;
 
@@ -33,6 +34,10 @@ public class Player : MonoBehaviour
         if (!collectionManager)
         {
             collectionManager = GameObject.Find("CollectionManager").GetComponent<CollectionManager>();
+        }
+        if (!gameController)
+        {
+            gameController = GameObject.Find("GameController").GetComponent<GameController>();
         }
         //设置默认状态
         if (!currentState)
@@ -60,7 +65,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (whiteTigerCount++ < 3 && GameObject.Find("GameController").GetComponent<GameController>().郁垒)
+            if (whiteTigerCount++ < 3 && gameController.郁垒)
             {
                 Transform player = GameObject.Find("Player").transform;
                 Instantiate(whiteTiger, player.position - new Vector3(0, 0.5f, 0), player.rotation);

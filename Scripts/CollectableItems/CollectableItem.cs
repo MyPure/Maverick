@@ -13,7 +13,9 @@ public class CollectableItem : MonoBehaviour
     //可收集物体的类型
     public ItemCode itemType;
 
-    public CollectionManager collectionManager;
+    //public CollectionManager collectionManager;
+
+    public GameController gameController;
 
     void Start()
     {
@@ -22,9 +24,9 @@ public class CollectableItem : MonoBehaviour
             gameObject.AddComponent<BoxCollider2D>();
         gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
 
-        if (!collectionManager)
+        if (!gameController)
         {
-            collectionManager = GameObject.Find("CollectionManager").GetComponent<CollectionManager>();
+            gameController = GameObject.Find("GameController").GetComponent<GameController>();
         }
     }
 
@@ -42,10 +44,10 @@ public class CollectableItem : MonoBehaviour
         switch (itemType)
         {
             case ItemCode.元神碎片:
-                collectionManager.Count_Fragment += 10;
+                gameController.Count_Fragment += 10;
                 break;
             case ItemCode.鬼门卯:
-                collectionManager.Count_GhostDoorMortise++;
+                gameController.Count_GhostDoorMortise++;
                 break;
             default:
                 break;

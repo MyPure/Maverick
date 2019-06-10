@@ -36,6 +36,10 @@ public class PassFlag : MonoBehaviour
                 gameController.passLevel = gameController.nowLevel;
             }
             Instantiate(passUI);
+
+            //通关后的数据处理
+
+            gameController.SaveGame();
         }
     }
 }

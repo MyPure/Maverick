@@ -14,17 +14,7 @@ public class CollectionManager : MonoBehaviour
     {
         //Count_Fragment = Count_GhostDoorMortise = 0;
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
-        if(gameController == null)
-        {
-            Count_Fragment = 0;
-            Count_GhostDoorMortise = 0;
-        }
-        else
-        {
-            Count_Fragment = gameController.Count_Fragment;
-            Count_GhostDoorMortise = gameController.Count_GhostDoorMortise;
-
-        }
+        
         text_fragment = Fragment.GetComponent<Text>();
         text_ghostDoorMortise = GhostDoorMortise.GetComponent<Text>();
     }
@@ -35,10 +25,17 @@ public class CollectionManager : MonoBehaviour
 
     void Update()
     {
+        if (gameController == null)
+        {
+            Count_Fragment = 0;
+            Count_GhostDoorMortise = 0;
+        }
+        else
+        {
+            Count_Fragment = gameController.Count_Fragment;
+            Count_GhostDoorMortise = gameController.Count_GhostDoorMortise;
+        }
         text_fragment.text = Count_Fragment.ToString();
         text_ghostDoorMortise.text = Count_GhostDoorMortise.ToString();
-
-        gameController.Count_Fragment = Count_Fragment;
-        gameController.Count_GhostDoorMortise = Count_GhostDoorMortise;
     }
 }

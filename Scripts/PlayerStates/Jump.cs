@@ -66,9 +66,9 @@ public class Jump : PlayerState
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && player.collectionManager.Count_Fragment >= doubleJump.cost)
+        //二段跳判定
+        if (Input.GetKeyDown(KeyCode.Space) && player.gameController.神荼)
         {
-            player.collectionManager.Count_Fragment -= doubleJump.cost;
             ChangeStateTo(StateType.DoubleJump);//Jump -> DoubleJump
             return;
         }

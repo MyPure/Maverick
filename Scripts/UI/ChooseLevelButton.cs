@@ -6,6 +6,8 @@ public class ChooseLevelButton : MonoBehaviour
 {
     public int level;
     public GameController gameController;//在ChooseLevel中赋值
+    public Text text;
+    public Image image;
 
     /// <summary>
     /// 判断该按钮能否点击
@@ -19,6 +21,52 @@ public class ChooseLevelButton : MonoBehaviour
         else
         {
             GetComponent<Button>().interactable = true;
+        }
+
+        if (gameController.unlocklevel >= level)
+        {
+            if (text)
+            {
+                text.text = "已解锁!";
+            }
+            if (image)
+            {
+                image.enabled = false;
+            }
+        }
+        else
+        {
+            if (text)
+            {
+                text.text = "解锁消耗   3";
+            }
+            if (image)
+            {
+                image.enabled = true;
+            }
+        }
+    }
+
+    public void Unlock()
+    {
+        if (gameController.Count_GhostDoorMortise >= 3)
+        {
+            gameController.Count_GhostDoorMortise -= 3;
+            gameController.unlocklevel = level;
+            gameController.SaveGame();
+        }
+    }
+
+    public void CheckAndLoadSence(int level)
+    {
+        if (gameController.unlocklevel < level)
+        {
+            Unlock();
+            Check();
+        }
+        else
+        {
+            gameController.LoadLevel(level);
         }
     }
 }

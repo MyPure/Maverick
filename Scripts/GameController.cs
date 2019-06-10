@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public GameObject chooseLevelUI;
     public int nowLevel = 0;//当前在第几关
     public int passLevel = 0;//一共过了几关
+    public int unlocklevel = 0;//解锁了几关
     public bool 神荼, 郁垒;//是否拥有此技能
     public int Count_Fragment = 0, Count_GhostDoorMortise = 0;//收集物品数
     public int levelTotalNum;// 关卡总数
@@ -70,11 +71,12 @@ public class GameController : MonoBehaviour
     private Save CreatSave()
     {
         Save save = new Save();
-        save.Count_Fragment = Count_Fragment;
         save.神荼 = 神荼;
         save.郁垒 = 郁垒;
+        save.Count_Fragment = Count_Fragment;
         save.Count_GhostDoorMortise = Count_GhostDoorMortise;
         save.passLevel = passLevel;
+        save.unlockLevel = unlocklevel;
         return save;
     }
 
@@ -140,6 +142,7 @@ public class GameController : MonoBehaviour
         Count_GhostDoorMortise = save.Count_GhostDoorMortise;
         Count_Fragment = save.Count_Fragment;
         passLevel = save.passLevel;
+        unlocklevel = save.unlockLevel;
         神荼 = save.神荼;
         郁垒 = save.郁垒;
     }
