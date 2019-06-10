@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public GameObject chooseLevelUI;
     public int nowLevel = 0;//当前在第几关
     public int passLevel = 0;//一共过了几关
+    public int Count_Fragment = 0, Count_GhostDoorMortise = 0;//收集物品数
     public int levelTotalNum;// 关卡总数
     private static bool first = true;//首次启动
 
@@ -66,6 +67,8 @@ public class GameController : MonoBehaviour
     private Save CreatSave()
     {
         Save save = new Save();
+        save.Count_Fragment = Count_Fragment;
+        save.Count_GhostDoorMortise = Count_GhostDoorMortise;
         save.passLevel = passLevel;
         return save;
     }
@@ -129,6 +132,8 @@ public class GameController : MonoBehaviour
     /// <param name="save"></param>
     private void LoadSave(Save save)
     {
+        Count_GhostDoorMortise = save.Count_GhostDoorMortise;
+        Count_Fragment = save.Count_Fragment;
         passLevel = save.passLevel;
     }
 }

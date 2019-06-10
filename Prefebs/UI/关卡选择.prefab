@@ -1457,6 +1457,8 @@ MonoBehaviour:
   - {fileID: 2774541537192702375}
   - {fileID: 5874595303176095616}
   - {fileID: 8603785270287634132}
+  text_Count_Fragment: {fileID: 7085434528069450730}
+  text_Count_GhostDoorMortise: {fileID: 5211817599175607808}
 --- !u!1 &2838554106186712814
 GameObject:
   m_ObjectHideFlags: 0
