@@ -13,11 +13,13 @@ public class GameController : MonoBehaviour
     public int unlocklevel = 0;//解锁了几关
     public bool 神荼, 郁垒;//是否拥有此技能
     public int Count_Fragment = 0, Count_GhostDoorMortise = 0;//收集物品数
+    public Dictionary<int, List<Transform>> mortisesInfo;//卯的信息
     public int levelTotalNum;// 关卡总数
     private static bool first = true;//首次启动
 
     private void Start()
     {
+        mortisesInfo = new Dictionary<int, List<Transform>>();
         levelTotalNum = 3;
     }
 
@@ -34,18 +36,32 @@ public class GameController : MonoBehaviour
     /// <summary>
     /// 加载特定关卡
     /// </summary>
-    public void LoadLevel(int i)
+    public void LoadLevel(int level)
     {
         Player.whiteTigerCount = 0;
         //更新当前关卡
-        nowLevel = i;
+        nowLevel = level;
 
         //判断是否完全通关
         if(nowLevel > levelTotalNum)
             SceneManager.LoadScene("PASS_ALL");
         //加载下一个关卡
         else
+        {
             SceneManager.LoadScene("Level " + nowLevel);
+            Debug.Log("要加载的关卡是" + nowLevel + " mortisesInfo的长度是" + mortisesInfo.Count);
+            if (mortisesInfo.ContainsKey(nowLevel))
+            {
+                //如果不是第一次加载该场景，先销毁当前所有卯，再从存档中读出原来“存活”的卯
+                List<Transform> list = new List<Transform>();
+                foreach (var v in GameObject.FindGameObjectsWithTag("MORTISE"))
+                    list.Add(v.transform);
+                for (int i = 0; i < list.Count; i++)
+                {
+                    Destroy(list[i].gameObject);
+                }
+            }
+        }
     }
 
     public void LoadHome()
@@ -77,6 +93,21 @@ public class GameController : MonoBehaviour
         save.Count_GhostDoorMortise = Count_GhostDoorMortise;
         save.passLevel = passLevel;
         save.unlockLevel = unlocklevel;
+
+        #region 更新存档中的mortises
+
+        List<Transform> mortises = new List<Transform>();
+        foreach(var v in GameObject.FindGameObjectsWithTag("MORTISE"))
+            mortises.Add(v.transform);
+        
+        if (mortisesInfo.ContainsKey(nowLevel))
+            mortisesInfo[nowLevel] = mortises;
+        else
+            mortisesInfo.Add(nowLevel,mortises);
+        save.mortisesInfo = mortisesInfo;
+
+        #endregion
+
         return save;
     }
 
@@ -145,5 +176,6 @@ public class GameController : MonoBehaviour
         unlocklevel = save.unlockLevel;
         神荼 = save.神荼;
         郁垒 = save.郁垒;
+        mortisesInfo = save.mortisesInfo;
     }
 }
