@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6667655545186543815}
   m_Layer: 0
   m_Name: "\u5143\u795E\u788E\u7247"
-  m_TagString: Untagged
+  m_TagString: Fragment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
-  collectionManager: {fileID: 0}
+  gameController: {fileID: 0}
 --- !u!61 &6667655545186543815
 BoxCollider2D:
   m_ObjectHideFlags: 0

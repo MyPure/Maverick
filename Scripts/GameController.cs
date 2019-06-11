@@ -13,13 +13,14 @@ public class GameController : MonoBehaviour
     public int unlocklevel = 0;//解锁了几关
     public bool 神荼, 郁垒;//是否拥有此技能
     public int Count_Fragment = 0, Count_GhostDoorMortise = 0;//收集物品数
-    public Dictionary<int, List<Transform>> mortisesInfo;//卯的信息
     public int levelTotalNum;// 关卡总数
+    public List<int> fragment_nums;//各个关卡应该出现的碎片数
     private static bool first = true;//首次启动
+
 
     private void Start()
     {
-        mortisesInfo = new Dictionary<int, List<Transform>>();
+        fragment_nums = new List<int>();
         levelTotalNum = 3;
     }
 
@@ -49,18 +50,7 @@ public class GameController : MonoBehaviour
         else
         {
             SceneManager.LoadScene("Level " + nowLevel);
-            Debug.Log("要加载的关卡是" + nowLevel + " mortisesInfo的长度是" + mortisesInfo.Count);
-            if (mortisesInfo.ContainsKey(nowLevel))
-            {
-                //如果不是第一次加载该场景，先销毁当前所有卯，再从存档中读出原来“存活”的卯
-                List<Transform> list = new List<Transform>();
-                foreach (var v in GameObject.FindGameObjectsWithTag("MORTISE"))
-                    list.Add(v.transform);
-                for (int i = 0; i < list.Count; i++)
-                {
-                    Destroy(list[i].gameObject);
-                }
-            }
+            StartCoroutine( DestroyExtraFragment() );
         }
     }
 
@@ -94,19 +84,21 @@ public class GameController : MonoBehaviour
         save.passLevel = passLevel;
         save.unlockLevel = unlocklevel;
 
-        #region 更新存档中的mortises
 
-        List<Transform> mortises = new List<Transform>();
-        foreach(var v in GameObject.FindGameObjectsWithTag("MORTISE"))
-            mortises.Add(v.transform);
-        
-        if (mortisesInfo.ContainsKey(nowLevel))
-            mortisesInfo[nowLevel] = mortises;
-        else
-            mortisesInfo.Add(nowLevel,mortises);
-        save.mortisesInfo = mortisesInfo;
 
-        #endregion
+        var v = GameObject.FindGameObjectsWithTag("Fragment");
+
+        if (fragment_nums.Count >= nowLevel)//不是第一次玩该关卡
+        {
+            fragment_nums[nowLevel-1] = v.Length;
+        }
+        else//是第一次
+        {
+            fragment_nums.Add(v.Length);
+        }
+        save.fragment_nums = fragment_nums;
+        Debug.Log("创建存档成功：fragment_nums的数据有" + save.fragment_nums.Count + "个");
+        Debug.Log("碎片值为" + fragment_nums[fragment_nums.Count - 1]);
 
         return save;
     }
@@ -176,6 +168,42 @@ public class GameController : MonoBehaviour
         unlocklevel = save.unlockLevel;
         神荼 = save.神荼;
         郁垒 = save.郁垒;
-        mortisesInfo = save.mortisesInfo;
+        fragment_nums = save.fragment_nums;
+
+
+        Debug.Log("加载存档成功：fragment_nums的数据有" + fragment_nums.Count + "个");
     }
+
+    /// <summary>
+    /// 销毁多余碎片
+    /// </summary>
+    private IEnumerator DestroyExtraFragment()
+    {
+        yield return new WaitForSeconds(1);
+
+        GameObject[] obj_list = GameObject.FindGameObjectsWithTag("Fragment");
+        HashSet<int> destroy_indexs = new HashSet<int>();
+        int total_nums = obj_list.Length;
+        int destoy_nums = total_nums - fragment_nums[nowLevel - 1];
+        System.Random random = new System.Random();
+
+        Debug.Log("total_nums：" + total_nums);
+        Debug.Log("destoy_nums：" + destoy_nums);
+        Debug.Log("fragment_nums[nowLevel - 1]：" + fragment_nums[nowLevel - 1]);
+
+        while (destoy_nums > 0)
+        {
+            int index = random.Next() % destoy_nums;
+            if (destroy_indexs.Contains(index))
+            {
+                ;
+            }
+            else
+            {
+                Destroy(obj_list[index]);
+                destoy_nums--;
+            }
+        }
+    }
+
 }

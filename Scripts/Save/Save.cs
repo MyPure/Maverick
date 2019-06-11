@@ -9,9 +9,7 @@ public class Save
     public int unlockLevel;//解锁了几关
     public int Count_Fragment, Count_GhostDoorMortise;//该物品的数目
     public bool 神荼, 郁垒;//是否拥有此技能
-
-    //各个关卡的卯的信息。<对应关卡, 还存在的卯的列表>
-    public Dictionary<int, List<Transform>> mortisesInfo;
+    public List<int> fragment_nums;//关卡对应的碎片数
 
     public Save() { }
     public Save(bool clear)
@@ -23,7 +21,7 @@ public class Save
             Count_Fragment = 0;
             Count_GhostDoorMortise = 0;
             神荼 = 郁垒 = false;
-            mortisesInfo = new Dictionary<int, List<Transform>>();
+            fragment_nums = new List<int>();
         }
     }
 
