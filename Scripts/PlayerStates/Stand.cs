@@ -7,6 +7,14 @@ public class Stand : PlayerState
     public override void HandleInput()
     {
         HorizontalMove();
+        if(Input.GetAxis("Horizontal") == 0)
+        {
+            player.animator.Play("idle");
+        }
+        else
+        {
+            player.animator.Play("walk");
+        }
     }
     public override void StateStart()
     {

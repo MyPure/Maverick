@@ -33,7 +33,7 @@ public class CameraFollow : MonoBehaviour
         }
         
         Vector3 destination = new Vector3(d.x, currentY, transform.position.z);
-        Vector3 _destination = Vector3.MoveTowards(transform.position, new Vector3(destination.x, destination.y, transform.position.z), Mathf.Min(1, Mathf.Abs((destination - transform.position).magnitude) / 1.0f) * 4 * Time.deltaTime);
+        Vector3 _destination = Vector3.MoveTowards(transform.position, new Vector3(destination.x, destination.y, transform.position.z), Mathf.Min(1, Mathf.Abs((destination - transform.position).magnitude) / 2.0f) * 8 * Time.deltaTime);
         transform.Translate(_destination - transform.position);
     }
 }

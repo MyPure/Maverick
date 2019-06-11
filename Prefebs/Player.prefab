@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3185532745821725948}
   - component: {fileID: 3185532745821725951}
+  - component: {fileID: 6698318586994519718}
   - component: {fileID: 3185532745821725950}
   - component: {fileID: 3185532745821725825}
   - component: {fileID: 3185532745821725824}
@@ -34,7 +35,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3185532745821725826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.46, y: 2.22, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,9 +78,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 8cdc2e40b8fe71c48983171ba19ff042, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af1c6a110db01c946bfc320a2bd52cbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 2}
@@ -88,6 +89,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6698318586994519718
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3185532745821725826}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dea517d71ce78df4396039ebee3a1ffe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &3185532745821725950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,9 +135,12 @@ MonoBehaviour:
   rayY: 4
   rayX: 6
   collectionManager: {fileID: 0}
+  gameController: {fileID: 0}
   DeadUI: {fileID: 8539537988739782524, guid: 70a847eabb4572d4ca2620f62a7181aa, type: 3}
   whiteTiger: {fileID: 2238276014206851037, guid: f7e2d4c7b69d446449599ff85313076e,
     type: 3}
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
 --- !u!114 &3185532745821725825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +273,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    oldSize: {x: 0.9722222, y: 1.9944445}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

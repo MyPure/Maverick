@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
     public GameController gameController;
     public GameObject DeadUI;
     public GameObject whiteTiger;
-
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
     public static int whiteTigerCount;//使用白虎的次数
 
     /// <summary>
@@ -45,6 +46,8 @@ public class Player : MonoBehaviour
             currentState = GetComponent<Stand>();
         }
         currentState.StateStart();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     bool death;//是否死亡
     /// <summary>

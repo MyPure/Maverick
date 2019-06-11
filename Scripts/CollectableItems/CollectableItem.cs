@@ -45,7 +45,7 @@ public class CollectableItem : MonoBehaviour
         {
             case ItemCode.元神碎片:
                 if (gameController)
-                    gameController.Count_Fragment += 10;
+                    gameController.Count_Fragment ++;
                 break;
             case ItemCode.鬼门卯:
                 if (gameController)

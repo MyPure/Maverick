@@ -46,6 +46,22 @@ public class PlayerState : MonoBehaviour
             {
                 player.currentState = s;
                 player.currentState.StateStart();
+                if(type == StateType.Stand || type == StateType.Drop)
+                {
+                    player.animator.Play("idle");
+                }
+                else if(type == StateType.Jump || type == StateType.DoubleJump)
+                {
+                    player.animator.Play("jump");
+                }
+                else if(type == StateType.Squat)
+                {
+                    player.animator.Play("squat");
+                }
+                else if(type == StateType.Climb)
+                {
+                    player.animator.Play("climb");
+                }
                 return;
             }
         }
@@ -55,6 +71,7 @@ public class PlayerState : MonoBehaviour
     {
         if (Input.GetAxis("Horizontal") > 0)
         {
+            player.spriteRenderer.flipX = true;
             List<RaycastHit2D> hits = new List<RaycastHit2D>();
             for (int i = 0; i < player.rayX; i++)
             {
@@ -74,6 +91,7 @@ public class PlayerState : MonoBehaviour
         }
         else if (Input.GetAxis("Horizontal") < 0)
         {
+            player.spriteRenderer.flipX = false;
             List<RaycastHit2D> hits = new List<RaycastHit2D>();
             for (int i = 0; i < player.rayX; i++)
             {

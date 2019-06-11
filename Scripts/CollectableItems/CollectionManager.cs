@@ -25,17 +25,20 @@ public class CollectionManager : MonoBehaviour
 
     void Update()
     {
-        if (gameController == null)
+        if (gameController)
         {
-            Count_Fragment = 0;
-            Count_GhostDoorMortise = 0;
+            if (gameController == null)
+            {
+                Count_Fragment = 0;
+                Count_GhostDoorMortise = 0;
+            }
+            else
+            {
+                Count_Fragment = gameController.Count_Fragment;
+                Count_GhostDoorMortise = gameController.Count_GhostDoorMortise;
+            }
+            text_fragment.text = Count_Fragment.ToString();
+            text_ghostDoorMortise.text = Count_GhostDoorMortise.ToString();
         }
-        else
-        {
-            Count_Fragment = gameController.Count_Fragment;
-            Count_GhostDoorMortise = gameController.Count_GhostDoorMortise;
-        }
-        text_fragment.text = Count_Fragment.ToString();
-        text_ghostDoorMortise.text = Count_GhostDoorMortise.ToString();
     }
 }

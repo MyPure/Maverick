@@ -5,13 +5,13 @@ using UnityEngine;
 public class Squat : PlayerState
 {
     public float squatHeight = 1.0f;
-    public Sprite standSprite , squatSprite;
     float velocity;
     BoxCollider2D boxCollider2D;
     public override void HandleInput()
     {
         if (Input.GetAxis("Horizontal") > 0)
         {
+            player.spriteRenderer.flipX = true;
             List<RaycastHit2D> hits = new List<RaycastHit2D>();
             for (int i = 0; i < player.rayX; i++)
             {
@@ -30,6 +30,7 @@ public class Squat : PlayerState
         }
         else if (Input.GetAxis("Horizontal") < 0)
         {
+            player.spriteRenderer.flipX = false;
             List<RaycastHit2D> hits = new List<RaycastHit2D>();
             for (int i = 0; i < player.rayX; i++)
             {
@@ -49,7 +50,6 @@ public class Squat : PlayerState
     }
     public override void StateStart()
     {
-        GetComponent<SpriteRenderer>().sprite = squatSprite;
         boxCollider2D = GetComponent<BoxCollider2D>();
         boxCollider2D.size = new Vector2(1,squatHeight);
         boxCollider2D.offset = new Vector2(0, -0.5f * (player.height-squatHeight));
@@ -97,7 +97,6 @@ public class Squat : PlayerState
         }
         if (!Input.GetKey(KeyCode.S) && canStand && onGround)
         {
-            GetComponent<SpriteRenderer>().sprite = standSprite;
             boxCollider2D.size = new Vector2(1, player.height);
             boxCollider2D.offset = new Vector2(0, 0);
             ChangeStateTo(StateType.Stand);//Squat -> Stand
@@ -107,7 +106,6 @@ public class Squat : PlayerState
         //跳跃检测
         if (Input.GetKey(KeyCode.Space) && canStand)
         {
-            GetComponent<SpriteRenderer>().sprite = standSprite;
             boxCollider2D.size = new Vector2(1, player.height);
             boxCollider2D.offset = new Vector2(0, 0);
             ChangeStateTo(StateType.Jump);//Squat -> Jump
@@ -117,7 +115,6 @@ public class Squat : PlayerState
         //掉落判定
         if (!onGround && canStand)
         {
-            GetComponent<SpriteRenderer>().sprite = standSprite;
             boxCollider2D.size = new Vector2(1, player.height);
             boxCollider2D.offset = new Vector2(0, 0);
             ChangeStateTo(StateType.Drop);//Squat -> Drop
