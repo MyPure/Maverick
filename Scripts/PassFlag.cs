@@ -12,11 +12,19 @@ public class PassFlag : MonoBehaviour
 
     private GameController gameController;
 
+    private CollectionManager collectionManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        if(GameObject.Find("GameController") != null)
+        if (GameObject.Find("GameController") != null)
+        {
             gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        }
+        if (GameObject.Find("CollectionManager") != null)
+        {
+            collectionManager = GameObject.Find("CollectionManager").GetComponent<CollectionManager>();
+        }
     }
 
     // Update is called once per frame
@@ -38,7 +46,7 @@ public class PassFlag : MonoBehaviour
             Instantiate(passUI);
 
             //通关后的数据处理
-
+            collectionManager.Pass();
             gameController.SaveGame();
         }
     }

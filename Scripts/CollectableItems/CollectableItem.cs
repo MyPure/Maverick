@@ -17,6 +17,8 @@ public class CollectableItem : MonoBehaviour
 
     public GameController gameController;
 
+    public CollectionManager collectionManager;
+
     void Start()
     {
         //确保有碰撞盒
@@ -27,6 +29,10 @@ public class CollectableItem : MonoBehaviour
         if (!gameController)
         {
             gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        }
+        if (!collectionManager)
+        {
+            collectionManager = GameObject.Find("CollectionManager").GetComponent<CollectionManager>();
         }
     }
 
@@ -44,12 +50,12 @@ public class CollectableItem : MonoBehaviour
         switch (itemType)
         {
             case ItemCode.元神碎片:
-                if (gameController)
+                if (collectionManager)
                     gameController.Count_Fragment ++;
                 break;
             case ItemCode.鬼门卯:
-                if (gameController)
-                    gameController.Count_GhostDoorMortise++;
+                if (collectionManager)
+                    collectionManager.Count_GhostDoorMortise ++;
                 break;
             default:
                 break;

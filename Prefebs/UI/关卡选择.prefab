@@ -241,7 +241,7 @@ MonoBehaviour:
   level: 3
   gameController: {fileID: 0}
   text: {fileID: 4542197552684942816}
-  image: {fileID: 0}
+  image: {fileID: 9077007669003691558}
 --- !u!1 &1003796525628222286
 GameObject:
   m_ObjectHideFlags: 0
