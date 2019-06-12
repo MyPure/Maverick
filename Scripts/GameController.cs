@@ -182,7 +182,11 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("Level " + nowLevel);
         yield return new WaitForSeconds(0.1f);
 
-        if (fragment_nums.Count != 0)
+        if(fragment_nums.Count < nowLevel)
+        {
+            ;//如果是第一次进入该关卡，先不用加载存档
+        }
+        else if (fragment_nums.Count != 0)
         {
 	        GameObject[] obj_list = GameObject.FindGameObjectsWithTag("Fragment");
 	        HashSet<int> destroy_indexs = new HashSet<int>();
