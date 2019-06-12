@@ -38,7 +38,7 @@ public class ChooseLevelButton : MonoBehaviour
         {
             if (text)
             {
-                text.text = "解锁消耗   3";
+                text.text = "解锁消耗  10";
             }
             if (image)
             {
@@ -49,9 +49,9 @@ public class ChooseLevelButton : MonoBehaviour
 
     public void Unlock()
     {
-        if (gameController.Count_GhostDoorMortise >= 3)
+        if (gameController.Count_GhostDoorMortise >= 10)
         {
-            gameController.Count_GhostDoorMortise -= 3;
+            gameController.Count_GhostDoorMortise -= 10;
             gameController.unlocklevel = level;
             gameController.SaveGame();
         }

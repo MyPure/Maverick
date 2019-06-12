@@ -12,6 +12,8 @@ public class FoxGhost : MonoBehaviour
 
     private Rigidbody2D rig;
 
+    public Sprite hide, move;
+
     public float hideDistance = 2.0f;
     public float showDistance = 2.0f;
 
@@ -58,14 +60,17 @@ public class FoxGhost : MonoBehaviour
         if (t <= a || t>= b)
         {
             result = 0;
+            sprite.sprite = hide;
         }
         else if(t > a && t < c)
         {
             result = (t - a) / (c - a);
+            sprite.sprite = hide;
         }
         else
         {
             result = (b - t) / (b - c);
+            sprite.sprite = move;
         }
         return result;
     }

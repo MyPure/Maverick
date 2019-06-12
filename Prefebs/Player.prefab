@@ -217,9 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateType: 0
   player: {fileID: 0}
-  squatHeight: 1
-  standSprite: {fileID: 21300000, guid: 8cdc2e40b8fe71c48983171ba19ff042, type: 3}
-  squatSprite: {fileID: 21300016, guid: 8cdc2e40b8fe71c48983171ba19ff042, type: 3}
+  squatHeight: 1.5
 --- !u!114 &6007908598774719268
 MonoBehaviour:
   m_ObjectHideFlags: 0

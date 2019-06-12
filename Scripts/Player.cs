@@ -49,13 +49,16 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-    bool death;//是否死亡
+    public bool death;//是否死亡
     /// <summary>
     /// 状态在每帧更新时调用
     /// </summary>
     private void Update()
     {
-        currentState.StateUpdate();
+        if (!death)
+        {
+            currentState.StateUpdate();
+        }
 
         if(!death && transform.position.y < -6)
         {
@@ -91,7 +94,7 @@ public class Player : MonoBehaviour
         List<Component> comList = new List<Component>();
         foreach (var component in gameObject.GetComponents<Component>())
         {
-            if (!(component is Transform))
+            if (!(component is Transform || component is Player))
                 comList.Add(component);
         }
         foreach (Component item in comList)

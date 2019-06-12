@@ -116,18 +116,18 @@ TextureImporter:
       name: squat_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2
-        width: 244
-        height: 363
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 34
+        y: 4
+        width: 215
+        height: 282
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a625b1bd8e847e445b6155ddc0458116
+      spriteID: 7c09b3fa266f01c4da067f035a5bdd63
       vertices: []
       indices: 
       edges: []
@@ -136,18 +136,18 @@ TextureImporter:
       name: squat_1
       rect:
         serializedVersion: 2
-        x: 264
-        y: 0
-        width: 218
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 275
+        y: 8
+        width: 213
+        height: 280
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58cdcc7534e0ab646a5e2472db01a7ff
+      spriteID: 391608ce4ba1b4b4d9b3cffa83add726
       vertices: []
       indices: 
       edges: []
@@ -156,18 +156,18 @@ TextureImporter:
       name: squat_2
       rect:
         serializedVersion: 2
-        x: 525
-        y: 0
-        width: 219
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 536
+        y: 8
+        width: 212
+        height: 281
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09d7e0e1e59fb4c489504b0c4e9921ec
+      spriteID: 12ab6632c5e13074db270c4cc1af78dc
       vertices: []
       indices: 
       edges: []
@@ -176,18 +176,18 @@ TextureImporter:
       name: squat_3
       rect:
         serializedVersion: 2
-        x: 787
-        y: 0
-        width: 215
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 796
+        y: 8
+        width: 211
+        height: 281
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 433df42db94b64441807d41c74e3bd93
+      spriteID: baca2868deb9a7b41ada387c41298389
       vertices: []
       indices: 
       edges: []
@@ -196,18 +196,18 @@ TextureImporter:
       name: squat_4
       rect:
         serializedVersion: 2
-        x: 1068
-        y: 0
-        width: 215
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1080
+        y: 8
+        width: 206
+        height: 281
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a919303a02cf0941ae07d8f7f6b547a
+      spriteID: f4c60e5d60c9fef4c97004375a802477
       vertices: []
       indices: 
       edges: []
@@ -216,18 +216,18 @@ TextureImporter:
       name: squat_5
       rect:
         serializedVersion: 2
-        x: 1350
-        y: 2
-        width: 210
-        height: 363
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1360
+        y: 4
+        width: 203
+        height: 280
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88451d83d1bbb194e8bce5a135bec2c3
+      spriteID: 0315c540deeab6a41958a787f74cbadf
       vertices: []
       indices: 
       edges: []
@@ -236,18 +236,18 @@ TextureImporter:
       name: squat_6
       rect:
         serializedVersion: 2
-        x: 1627
-        y: 6
-        width: 207
-        height: 359
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1636
+        y: 4
+        width: 200
+        height: 282
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 577c96ef29c16bb458afd8b2584cf10f
+      spriteID: 3dea92ac10a6cc2468e85774e3cc8233
       vertices: []
       indices: 
       edges: []
@@ -256,18 +256,18 @@ TextureImporter:
       name: squat_7
       rect:
         serializedVersion: 2
-        x: 1897
-        y: 0
-        width: 206
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1908
+        y: 7
+        width: 198
+        height: 281
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87ea44ea12d774841b212f27b1a729c2
+      spriteID: 8816d806cd262d841b5118c44f327a13
       vertices: []
       indices: 
       edges: []
@@ -276,18 +276,18 @@ TextureImporter:
       name: squat_8
       rect:
         serializedVersion: 2
-        x: 2170
-        y: 0
-        width: 203
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 2179
+        y: 7
+        width: 197
+        height: 281
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5eba25e8c45c904b99644bf9683c49c
+      spriteID: 9a40130944ae16f43beb7ccaa09f35a6
       vertices: []
       indices: 
       edges: []
@@ -296,18 +296,18 @@ TextureImporter:
       name: squat_9
       rect:
         serializedVersion: 2
-        x: 2459
-        y: 0
-        width: 203
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 2467
+        y: 7
+        width: 197
+        height: 280
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c850dda130481d646b6733dcae503409
+      spriteID: 5c00fbfeef295a54fb6c8aea0fb3b581
       vertices: []
       indices: 
       edges: []
@@ -316,18 +316,18 @@ TextureImporter:
       name: squat_10
       rect:
         serializedVersion: 2
-        x: 2745
-        y: 0
-        width: 206
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 2755
+        y: 8
+        width: 197
+        height: 281
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 655f2bcbf82ac8d4883e9bcaab9de2ee
+      spriteID: 573777088c48c1144a00f06850573649
       vertices: []
       indices: 
       edges: []
@@ -336,18 +336,18 @@ TextureImporter:
       name: squat_11
       rect:
         serializedVersion: 2
-        x: 3025
-        y: 0
-        width: 203
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 3035
+        y: 8
+        width: 195
+        height: 280
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eef972fafca7983498028251ac27fd86
+      spriteID: 6ef95a83d94fdfc4fbd60e36682d45d7
       vertices: []
       indices: 
       edges: []
@@ -356,18 +356,18 @@ TextureImporter:
       name: squat_12
       rect:
         serializedVersion: 2
-        x: 3295
-        y: 0
-        width: 203
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 3303
+        y: 8
+        width: 195
+        height: 280
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8cc8ae63c8407c4a816a942992f65c4
+      spriteID: fd35c830aab5c6c4e9ab443de86141db
       vertices: []
       indices: 
       edges: []
@@ -376,18 +376,18 @@ TextureImporter:
       name: squat_13
       rect:
         serializedVersion: 2
-        x: 3580
-        y: 0
-        width: 203
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 3588
+        y: 8
+        width: 195
+        height: 280
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be413022a5c5df0499a587364d143c07
+      spriteID: d9a54042873100f45b0ee70275f56760
       vertices: []
       indices: 
       edges: []
@@ -396,18 +396,18 @@ TextureImporter:
       name: squat_14
       rect:
         serializedVersion: 2
-        x: 3838
-        y: 0
-        width: 203
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 3847
+        y: 11
+        width: 194
+        height: 277
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a8beb10f40a9a04d8aefc7322e43ff6
+      spriteID: a0f91d2931e014046abd06306ad125ea
       vertices: []
       indices: 
       edges: []
@@ -416,18 +416,18 @@ TextureImporter:
       name: squat_15
       rect:
         serializedVersion: 2
-        x: 4107
-        y: 6
-        width: 200
-        height: 359
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 4112
+        y: 4
+        width: 196
+        height: 280
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d2c3d5ce400b1245b5c38e04fce5f2f
+      spriteID: 4c41354ff45d9bf479adda3d5e210c79
       vertices: []
       indices: 
       edges: []
@@ -436,18 +436,18 @@ TextureImporter:
       name: squat_16
       rect:
         serializedVersion: 2
-        x: 4393
-        y: 6
-        width: 203
-        height: 359
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 4399
+        y: 4
+        width: 195
+        height: 280
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f622f9935fa55814f8a9e21079e2ce85
+      spriteID: a69dc2bd3e1ec6547961eed3c22b4c55
       vertices: []
       indices: 
       edges: []
@@ -456,18 +456,18 @@ TextureImporter:
       name: squat_17
       rect:
         serializedVersion: 2
-        x: 4702
-        y: 2
-        width: 202
-        height: 359
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 4710
+        y: 4
+        width: 194
+        height: 280
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96bc6ba2283bd3e44a63c063fd165e9b
+      spriteID: 212e354cdfe76104fa9e554df8a51c21
       vertices: []
       indices: 
       edges: []
@@ -476,18 +476,18 @@ TextureImporter:
       name: squat_18
       rect:
         serializedVersion: 2
-        x: 4959
-        y: 3
-        width: 203
-        height: 362
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 4963
+        y: 4
+        width: 197
+        height: 280
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e8780c399a2354499719370c129e6d1
+      spriteID: 358284ba93fb7a647b6a135251655e35
       vertices: []
       indices: 
       edges: []
@@ -496,18 +496,18 @@ TextureImporter:
       name: squat_19
       rect:
         serializedVersion: 2
-        x: 5236
-        y: 0
-        width: 203
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 5240
+        y: 8
+        width: 198
+        height: 281
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ae523d8ea51eeb44be134279f29a57e
+      spriteID: 9d0c3a24a3e4b6d4da4725752c7bc9b4
       vertices: []
       indices: 
       edges: []
@@ -516,18 +516,18 @@ TextureImporter:
       name: squat_20
       rect:
         serializedVersion: 2
-        x: 5502
-        y: 0
-        width: 207
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 5508
+        y: 7
+        width: 198
+        height: 281
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fbcc8307f5f0514eaf34405a83793bd
+      spriteID: 52e7020c1bbad7e46b34ffd88c38370a
       vertices: []
       indices: 
       edges: []
@@ -536,18 +536,18 @@ TextureImporter:
       name: squat_21
       rect:
         serializedVersion: 2
-        x: 5760
-        y: 2
-        width: 203
-        height: 363
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 5764
+        y: 4
+        width: 198
+        height: 280
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 307a9b4cc6a76294f9bc10112fbdd539
+      spriteID: 72c964f1300d74e44bcc64d3ebd205ec
       vertices: []
       indices: 
       edges: []
@@ -556,18 +556,18 @@ TextureImporter:
       name: squat_22
       rect:
         serializedVersion: 2
-        x: 6080
-        y: 6
-        width: 207
-        height: 359
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 6084
+        y: 4
+        width: 200
+        height: 280
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 724678f5b789bd14789d97c6b2f7d4be
+      spriteID: 4c9bef1aca567da4d8aeec1f9c9e7798
       vertices: []
       indices: 
       edges: []
@@ -576,18 +576,18 @@ TextureImporter:
       name: squat_23
       rect:
         serializedVersion: 2
-        x: 6369
-        y: 0
-        width: 214
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 6375
+        y: 8
+        width: 204
+        height: 280
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f1674238d1aa3d45a97796a504eedbd
+      spriteID: eeee8d2ce61cb144c9f2a60e8d1d405f
       vertices: []
       indices: 
       edges: []
@@ -596,18 +596,18 @@ TextureImporter:
       name: squat_24
       rect:
         serializedVersion: 2
-        x: 6666
-        y: 0
-        width: 215
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 6671
+        y: 11
+        width: 207
+        height: 278
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2119243cfe5fed04a8a2d5007783b140
+      spriteID: bc4df5c8294ff83409bfa9bcbde79911
       vertices: []
       indices: 
       edges: []
@@ -616,18 +616,18 @@ TextureImporter:
       name: squat_25
       rect:
         serializedVersion: 2
-        x: 6965
-        y: 0
-        width: 217
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 6968
+        y: 11
+        width: 212
+        height: 278
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5634d21998743943b0eacfaa80f5cd2
+      spriteID: 98cee7c974abe3a48a2b63c85afeda42
       vertices: []
       indices: 
       edges: []
@@ -636,18 +636,18 @@ TextureImporter:
       name: squat_26
       rect:
         serializedVersion: 2
-        x: 7225
-        y: 0
-        width: 218
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 7228
+        y: 8
+        width: 212
+        height: 281
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c318523ad6e4f6a459363e9cac62f04a
+      spriteID: 0d1b20540d6cf9f41b4a5a8bd32ae553
       vertices: []
       indices: 
       edges: []
@@ -656,18 +656,18 @@ TextureImporter:
       name: squat_27
       rect:
         serializedVersion: 2
-        x: 7518
-        y: 2
-        width: 222
-        height: 363
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 7523
+        y: 4
+        width: 212
+        height: 281
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8447498ebabfc2c4ab8ca71a81b5c748
+      spriteID: 487a610330d050d468d7924781306f49
       vertices: []
       indices: 
       edges: []
@@ -676,18 +676,18 @@ TextureImporter:
       name: squat_28
       rect:
         serializedVersion: 2
-        x: 7780
+        x: 7784
         y: 0
-        width: 220
-        height: 367
+        width: 214
+        height: 280
       alignment: 9
-      pivot: {x: 0.48610395, y: 0.48720345}
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e30c59eab13ac3c4f954261b28176761
+      spriteID: be7f4c10d653ca849b74255948965a62
       vertices: []
       indices: 
       edges: []

@@ -27,7 +27,7 @@ public class NextLevelButton : MonoBehaviour
         {
             if (text)
             {
-                text.text = "消耗   3";
+                text.text = "消耗  10";
             }
             if (image)
             {
@@ -40,9 +40,9 @@ public class NextLevelButton : MonoBehaviour
     {
         if (gameController.unlocklevel < gameController.nowLevel + 1)
         {
-            if (gameController.Count_GhostDoorMortise >= 3)
+            if (gameController.Count_GhostDoorMortise >= 10)
             {
-                gameController.Count_GhostDoorMortise -= 3;
+                gameController.Count_GhostDoorMortise -= 10;
                 gameController.unlocklevel = gameController.nowLevel + 1;
                 gameController.SaveGame();
                 gameController.LoadNext();
