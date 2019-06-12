@@ -181,29 +181,33 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
-        GameObject[] obj_list = GameObject.FindGameObjectsWithTag("Fragment");
-        HashSet<int> destroy_indexs = new HashSet<int>();
-        int total_nums = obj_list.Length;
-        int destoy_nums = total_nums - fragment_nums[nowLevel - 1];
-        System.Random random = new System.Random();
-
-        Debug.Log("total_nums：" + total_nums);
-        Debug.Log("destoy_nums：" + destoy_nums);
-        Debug.Log("fragment_nums[nowLevel - 1]：" + fragment_nums[nowLevel - 1]);
-
-        while (destoy_nums > 0)
+        if (fragment_nums.Count != 0)
         {
-            int index = random.Next() % destoy_nums;
-            if (destroy_indexs.Contains(index))
-            {
-                ;
-            }
-            else
-            {
-                Destroy(obj_list[index]);
-                destoy_nums--;
-            }
+	        GameObject[] obj_list = GameObject.FindGameObjectsWithTag("Fragment");
+	        HashSet<int> destroy_indexs = new HashSet<int>();
+	        int total_nums = obj_list.Length;
+	        int destoy_nums = total_nums - fragment_nums[nowLevel - 1];
+	        System.Random random = new System.Random();
+
+	        Debug.Log("total_nums：" + total_nums);
+	        Debug.Log("destoy_nums：" + destoy_nums);
+	        Debug.Log("fragment_nums[nowLevel - 1]：" + fragment_nums[nowLevel - 1]);
+
+	        while (destoy_nums > 0)
+	        {
+	            int index = random.Next() % destoy_nums;
+	            if (destroy_indexs.Contains(index))
+	            {
+	                ;
+	            }
+	            else
+	            {
+	                Destroy(obj_list[index]);
+	                destoy_nums--;
+	            }
+	        }        	
         }
+
     }
 
 }
