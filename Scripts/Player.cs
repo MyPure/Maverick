@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public GameObject DeadUI;
     public GameObject whiteTiger;
     public AudioClip tiger;
+    public AudioClip die;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public static int whiteTigerCount;//使用白虎的次数
@@ -123,6 +124,7 @@ public class Player : MonoBehaviour
         {
             Destroy(item);
         }
+        AudioSource.PlayClipAtPoint(die, transform.position);
         gameController.SaveGame();
     }
 }
