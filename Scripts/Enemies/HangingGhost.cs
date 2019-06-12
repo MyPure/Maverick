@@ -19,10 +19,23 @@ public class HangingGhost : MonoBehaviour
     {
         existTime = 0;
     }
+    bool play = true;
     void Update()
     {
         existTime += Time.deltaTime;
         float currentAngle = angle * Mathf.Sin(rotateSpeed * existTime);
+        if(currentAngle >= -1 && currentAngle <= 1)
+        {
+            if (play)
+            {
+                GetComponent<AudioSource>().Play();
+            }
+            play = false;
+        }
+        else
+        {
+            play = true;
+        }
         transform.localEulerAngles = new Vector3(0, 0, currentAngle);
     }
 }

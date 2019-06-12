@@ -7,6 +7,7 @@ public class ButtonAction : MonoBehaviour
 {
     public GameObject failUI;
     public GameObject successUI;
+    public AudioClip unLock;
     private GameController gameController;
     private void Awake()
     {
@@ -94,6 +95,7 @@ public class ButtonAction : MonoBehaviour
             gameController.Count_Fragment -= 碎片数;
             gameController.Count_GhostDoorMortise -= 鬼门卯数;
             gameController.神荼 = true;
+            AudioSource.PlayClipAtPoint(unLock, GameObject.FindWithTag("MainCamera").transform.position);
             InstantiateGameObject(successUI);
         }
         else
@@ -107,6 +109,7 @@ public class ButtonAction : MonoBehaviour
             gameController.Count_Fragment -= 碎片数;
             gameController.Count_GhostDoorMortise -= 鬼门卯数;
             gameController.郁垒 = true;
+            AudioSource.PlayClipAtPoint(unLock, GameObject.FindWithTag("MainCamera").transform.position);
             InstantiateGameObject(successUI);
         }
         else

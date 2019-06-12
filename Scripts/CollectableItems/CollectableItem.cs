@@ -16,9 +16,9 @@ public class CollectableItem : MonoBehaviour
     //public CollectionManager collectionManager;
 
     public GameController gameController;
-
     public CollectionManager collectionManager;
-
+    public AudioClip audioClipSuiPian;
+    public AudioClip audioClipMao;
     void Start()
     {
         //确保有碰撞盒
@@ -34,6 +34,7 @@ public class CollectableItem : MonoBehaviour
         {
             collectionManager = GameObject.Find("CollectionManager").GetComponent<CollectionManager>();
         }
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -61,9 +62,18 @@ public class CollectableItem : MonoBehaviour
                 break;
         }
 
-        //显示到HUD上
-        
         //播放音效
+        switch (itemType)
+        {
+            case ItemCode.元神碎片:
+                AudioSource.PlayClipAtPoint(audioClipSuiPian, transform.position);
+                break;
+            case ItemCode.鬼门卯:
+                AudioSource.PlayClipAtPoint(audioClipMao, transform.position);
+                break;
+            default:
+                break;
+        }
         yield return null;
 
         //销毁物体

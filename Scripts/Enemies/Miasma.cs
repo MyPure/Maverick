@@ -27,13 +27,25 @@ public class Miasma : MonoBehaviour
         spriteRenderer.enabled = false;
     }
 
+    bool play = true;
     void Update()
     {
         //和玩家的距离小于4的时候可以显示
         if (Mathf.Abs(gameObject.transform.position.x - player.transform.position.x) < visibleDistance)
+        {
             spriteRenderer.enabled = true;
+            if (play)
+            {
+                GetComponent<AudioSource>().Play();
+            }
+            play = false;
+        }
         else
+        {
             spriteRenderer.enabled = false;
+            play = true;
+        }
+            
 
     }
 }

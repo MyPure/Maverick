@@ -71,7 +71,7 @@ public class PlayerState : MonoBehaviour
     {
         if (Input.GetAxis("Horizontal") > 0)
         {
-            player.spriteRenderer.flipX = true;
+            player.flip = true;
             List<RaycastHit2D> hits = new List<RaycastHit2D>();
             for (int i = 0; i < player.rayX; i++)
             {
@@ -91,7 +91,7 @@ public class PlayerState : MonoBehaviour
         }
         else if (Input.GetAxis("Horizontal") < 0)
         {
-            player.spriteRenderer.flipX = false;
+            player.flip = false;
             List<RaycastHit2D> hits = new List<RaycastHit2D>();
             for (int i = 0; i < player.rayX; i++)
             {

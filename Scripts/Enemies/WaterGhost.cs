@@ -46,6 +46,7 @@ public class WaterGhost : MonoBehaviour
         {
             Vector3 d = Vector3.MoveTowards(transform.position, up, 10f * Time.deltaTime);//10为速度，可修改
             transform.Translate(d - transform.position, Space.Self);
+            GetComponent<AudioSource>().Play();
         }
         else if (state == "down" && transform.position != down)
         {

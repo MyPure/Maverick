@@ -12,10 +12,12 @@ public class Player : MonoBehaviour
     public float G = 20.0f;//角色受到的重力
     public int rayY = 3;//竖直方向发射的射线数量
     public int rayX = 5;//水平方向发射的射线数量
+    public bool flip;//true = 朝右
     public CollectionManager collectionManager;
     public GameController gameController;
     public GameObject DeadUI;
     public GameObject whiteTiger;
+    public AudioClip tiger;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public static int whiteTigerCount;//使用白虎的次数
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour
         {
             currentState = GetComponent<Stand>();
         }
+        flip = true;
         currentState.StateStart();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -60,10 +63,11 @@ public class Player : MonoBehaviour
             currentState.StateUpdate();
         }
 
-        if(!death && transform.position.y < -6)
+        if(!death && transform.position.y < - 15)
         {
             Die();
         }
+        spriteRenderer.flipX = flip;
         checkWhiteTiger();
     }
 
@@ -74,13 +78,31 @@ public class Player : MonoBehaviour
             if (whiteTigerCount++ < 3 && gameController.郁垒)
             {
                 Transform player = GameObject.Find("Player").transform;
-                Instantiate(whiteTiger, player.position - new Vector3(0, 0.5f, 0), player.rotation);
+                if (flip)
+                {
+                    Instantiate(whiteTiger, player.position + new Vector3(2.5f, -0.5f, 0), player.rotation);
+                    AudioSource.PlayClipAtPoint(tiger, transform.position + new Vector3(4, 0, 0));
+                }
+                else
+                {
+                    Instantiate(whiteTiger, player.position + new Vector3(-2.5f, -0.5f, 0), player.rotation).transform.eulerAngles = new Vector3(0,180,0);
+                    AudioSource.PlayClipAtPoint(tiger, transform.position + new Vector3(-4, 0, 0));
+                }
             }
             else
             {
 #if UNITY_EDITOR
                 Transform player = GameObject.Find("Player").transform;
-                Instantiate(whiteTiger, player.position - new Vector3(0, 0.5f, 0), player.rotation);
+                if (flip)
+                {
+                    Instantiate(whiteTiger, player.position + new Vector3(2.5f, -0.5f, 0), player.rotation);
+                    AudioSource.PlayClipAtPoint(tiger, transform.position + new Vector3(4, 0, 0));
+                }
+                else
+                {
+                    Instantiate(whiteTiger, player.position + new Vector3(-2.5f, -0.5f, 0), player.rotation).transform.eulerAngles = new Vector3(0, 180, 0);
+                    AudioSource.PlayClipAtPoint(tiger, transform.position + new Vector3(-4, 0, 0));
+                }
 #endif
             }
         }

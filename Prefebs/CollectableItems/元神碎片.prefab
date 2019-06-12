@@ -95,6 +95,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   gameController: {fileID: 0}
+  collectionManager: {fileID: 0}
+  audioClipSuiPian: {fileID: 8300000, guid: ed372f7d19916fa438e688ea49685348, type: 3}
+  audioClipMao: {fileID: 8300000, guid: ba1f8f29f5ef22c4a9cde246d4cebee7, type: 3}
 --- !u!61 &6667655545186543815
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -112,7 +115,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.248, y: 1.012}
+    oldSize: {x: 0.936, y: 0.864}
     newSize: {x: 1.04, y: 0.8433333}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

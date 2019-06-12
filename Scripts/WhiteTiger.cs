@@ -10,20 +10,16 @@ public class WhiteTiger : MonoBehaviour
     //销毁时间
     public float destroyTime = 1;
 
-    public Rigidbody2D rig;
-
+    private float existTime = 0;
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        StartCoroutine(aciton());//destroyTime时间后销毁本物体
-    }
-
-    //destroyTime时间后销毁本物体
-    IEnumerator aciton()
-    {
-        rig.velocity = new Vector2(speed, 0);
-        yield return new WaitForSeconds(destroyTime);
-        Destroy(gameObject);
+        transform.Translate(Vector3.right * speed * Time.deltaTime);
+        existTime += Time.deltaTime;
+        if (existTime >= destroyTime)
+        {
+            Destroy(gameObject);
+        }
     }
 
     //销毁所有碰到的敌人

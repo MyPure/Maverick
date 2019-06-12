@@ -12,7 +12,7 @@ public class CollectionManager : MonoBehaviour
 
     private void Start()
     {
-        //Count_Fragment = Count_GhostDoorMortise = 0;
+        Count_GhostDoorMortise = 0;
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         Count_Fragment = Count_GhostDoorMortise = 0;
         text_fragment = Fragment.GetComponent<Text>();

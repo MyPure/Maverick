@@ -2803,7 +2803,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1375589095958177724}
-        m_MethodName: LoadHome
+        m_MethodName: DestroyNowCanvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
