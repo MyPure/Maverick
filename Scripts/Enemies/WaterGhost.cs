@@ -8,6 +8,7 @@ public class WaterGhost : MonoBehaviour
     string state;
     Vector3 up;
     Vector3 down;
+    Vector3 preset;
     public GameObject platform;
 
     public float upTime = 1.0f;//上升时间
@@ -22,12 +23,13 @@ public class WaterGhost : MonoBehaviour
         enemy.enabled = false;
         boxCollider = GetComponent<BoxCollider2D>();
         boxCollider.enabled = false;
+        preset = transform.localPosition;
     }
 
     void Update()
     {
-        down = platform.transform.position;//水鬼处在砖里的位置
-        up = down + Vector3.up * 4.0f;//水鬼起来的位置
+        down = platform.transform.position + preset;//水鬼处在砖里的位置
+        up = down + Vector3.up * 3.4f;//水鬼起来的位置
 
         float td = upTime + downTime;//一个周期的总时间
         if (Time.time % td < upTime)

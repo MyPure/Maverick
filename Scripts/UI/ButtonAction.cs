@@ -31,7 +31,7 @@ public class ButtonAction : MonoBehaviour
     /// </summary>
     public void TryAgain()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameController.LoadLevel(gameController.nowLevel);
     }
     /// <summary>
     /// 离开游戏

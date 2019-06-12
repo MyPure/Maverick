@@ -65,12 +65,12 @@ public class FoxGhost : MonoBehaviour
         else if(t > a && t < c)
         {
             result = (t - a) / (c - a);
-            sprite.sprite = hide;
+            sprite.sprite = move;
         }
         else
         {
             result = (b - t) / (b - c);
-            sprite.sprite = move;
+            sprite.sprite = hide;
         }
         return result;
     }

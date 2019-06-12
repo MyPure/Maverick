@@ -101,5 +101,6 @@ public class Player : MonoBehaviour
         {
             Destroy(item);
         }
+        gameController.SaveGame();
     }
 }
