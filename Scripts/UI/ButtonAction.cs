@@ -88,10 +88,11 @@ public class ButtonAction : MonoBehaviour
 
     public void 解锁神荼()
     {
-
-        if (gameController.Count_Fragment >= 50)
+        int 碎片数 = 1, 鬼门卯数 = 10;
+        if (gameController.Count_Fragment >= 碎片数 && gameController.Count_GhostDoorMortise >= 鬼门卯数)
         {
-            gameController.Count_Fragment -= 50;
+            gameController.Count_Fragment -= 碎片数;
+            gameController.Count_GhostDoorMortise -= 鬼门卯数;
             gameController.神荼 = true;
             InstantiateGameObject(successUI);
         }
@@ -100,9 +101,11 @@ public class ButtonAction : MonoBehaviour
     }
     public void 解锁郁垒()
     {
-        if (gameController.Count_Fragment >= 50)
+        int 碎片数 = 3, 鬼门卯数 = 30;
+        if (gameController.Count_Fragment >= 碎片数 && gameController.Count_GhostDoorMortise >= 鬼门卯数)
         {
-            gameController.Count_Fragment -= 50;
+            gameController.Count_Fragment -= 碎片数;
+            gameController.Count_GhostDoorMortise -= 鬼门卯数;
             gameController.郁垒 = true;
             InstantiateGameObject(successUI);
         }
