@@ -49,8 +49,8 @@ public class GameController : MonoBehaviour
         //加载下一个关卡
         else
         {
-            SceneManager.LoadScene("Level " + nowLevel);
-            StartCoroutine( DestroyExtraFragment() );
+            //SceneManager.LoadScene("Level " + nowLevel);
+            StartCoroutine( LoadAndDestroyExtraFragment() );
         }
     }
 
@@ -177,9 +177,10 @@ public class GameController : MonoBehaviour
     /// <summary>
     /// 销毁多余碎片
     /// </summary>
-    private IEnumerator DestroyExtraFragment()
+    private IEnumerator LoadAndDestroyExtraFragment()
     {
-        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("Level " + nowLevel);
+        yield return new WaitForSeconds(0.1f);
 
         if (fragment_nums.Count != 0)
         {
@@ -195,7 +196,7 @@ public class GameController : MonoBehaviour
 
 	        while (destoy_nums > 0)
 	        {
-	            int index = random.Next() % destoy_nums;
+	            int index = random.Next() % (destoy_nums+1);
 	            if (destroy_indexs.Contains(index))
 	            {
 	                ;
