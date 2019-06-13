@@ -42,22 +42,23 @@ public class WelcomeControl : MonoBehaviour
             text.text = v;
             yield return new WaitForSeconds(cycleTime);
         }
+        SceneManager.LoadScene("HomeUI");
     }
     IEnumerator ImageUpadate()
     {
+        float fadeSpeed = 1.0f / cycleTime;
         foreach(var v in images)
         {
             Color c = v.color;
             while(c.a > 0)
             {
-                c.a -= 0.01f;
+                c.a -= fadeSpeed * Time.deltaTime;
                 v.color = c;
                 yield return null;
             }
 
         }
 
-        SceneManager.LoadScene("HomeUI");
     }
     private void Update()
     {
