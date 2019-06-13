@@ -7,6 +7,8 @@ public class Squat : PlayerState
     public float squatHeight = 1.0f;
     float velocity;
     BoxCollider2D boxCollider2D;
+    float time;
+    public AudioClip walk;
     public override void HandleInput()
     {
         if (Input.GetAxis("Horizontal") > 0)
@@ -47,6 +49,16 @@ public class Squat : PlayerState
             }
             if (!haveObstacle) transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * player.speed * Time.deltaTime);
         }
+        if (Input.GetAxis("Horizontal") != 0)
+        {
+            time += Time.deltaTime;
+            if (time >= 0.75f)
+            {
+                player.audioSource.clip = walk;
+                player.audioSource.Play();
+                time = 0;
+            }
+        }
     }
     public override void StateStart()
     {
@@ -54,6 +66,7 @@ public class Squat : PlayerState
         boxCollider2D.size = new Vector2(1,squatHeight);
         boxCollider2D.offset = new Vector2(0, -0.5f * (player.height-squatHeight));
         velocity = 0;
+        time = 0;
     }
     public override void StateUpdate()
     {

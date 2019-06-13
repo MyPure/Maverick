@@ -186,6 +186,7 @@ MonoBehaviour:
   die: {fileID: 8300000, guid: 7b0c81992b79e5847b5fda130581a7c0, type: 3}
   animator: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  audioSource: {fileID: 0}
   death: 0
 --- !u!114 &3185532745821725825
 MonoBehaviour:
@@ -219,6 +220,7 @@ MonoBehaviour:
   player: {fileID: 0}
   jumpH: 2.5
   doubleJump: {fileID: 0}
+  jump: {fileID: 8300000, guid: b14b5f80b2a774c458892a8c148c095e, type: 3}
 --- !u!114 &3185532745821725827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateType: 0
   player: {fileID: 0}
+  walk: {fileID: 8300000, guid: 902511bd7295d4747971292d4a75f126, type: 3}
 --- !u!114 &6740018947254816308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +252,7 @@ MonoBehaviour:
   player: {fileID: 0}
   jumpH: 2.5
   cost: 2
+  jump: {fileID: 8300000, guid: b14b5f80b2a774c458892a8c148c095e, type: 3}
 --- !u!114 &7782426678128537790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +268,7 @@ MonoBehaviour:
   stateType: 0
   player: {fileID: 0}
   squatHeight: 1.5
+  walk: {fileID: 8300000, guid: 902511bd7295d4747971292d4a75f126, type: 3}
 --- !u!114 &6007908598774719268
 MonoBehaviour:
   m_ObjectHideFlags: 0

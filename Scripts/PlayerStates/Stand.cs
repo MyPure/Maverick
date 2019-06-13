@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stand : PlayerState
 {
+    public AudioClip walk;
     public override void HandleInput()
     {
         HorizontalMove();
@@ -13,19 +14,23 @@ public class Stand : PlayerState
         }
         else
         {
+            time += Time.deltaTime;
+            if (time >= 0.75f)
+            {
+                player.audioSource.clip = walk;
+                player.audioSource.Play();
+                time = 0;
+            }
             player.animator.Play("walk");
         }
     }
     public override void StateStart()
     {
-
+        time = 0.75f;
     }
+    private float time;
     public override void StateUpdate()
     {
-        if(Time.time % 0.5 == 0)
-        {
-            Debug.Log(Time.time);
-        }
         HandleInput();//检测输入
         List<RaycastHit2D> hits = new List<RaycastHit2D>();
         for (int i = 0; i < player.rayY; i++)

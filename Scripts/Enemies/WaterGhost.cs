@@ -25,7 +25,7 @@ public class WaterGhost : MonoBehaviour
         boxCollider.enabled = false;
         preset = transform.localPosition;
     }
-
+    bool play;
     void Update()
     {
         down = platform.transform.position + preset;//水鬼处在砖里的位置
@@ -35,10 +35,16 @@ public class WaterGhost : MonoBehaviour
         if (Time.time % td < upTime)
         {
             state = "up";
+            if (play)
+            {
+                GetComponent<AudioSource>().Play();
+            }
+            play = false;
         }
         else
         {
             state = "down";
+            play = true;
         }
 
         //水鬼移动
@@ -46,7 +52,6 @@ public class WaterGhost : MonoBehaviour
         {
             Vector3 d = Vector3.MoveTowards(transform.position, up, 10f * Time.deltaTime);//10为速度，可修改
             transform.Translate(d - transform.position, Space.Self);
-            GetComponent<AudioSource>().Play();
         }
         else if (state == "down" && transform.position != down)
         {
