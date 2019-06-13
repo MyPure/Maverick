@@ -42,7 +42,6 @@ public class WelcomeControl : MonoBehaviour
             text.text = v;
             yield return new WaitForSeconds(cycleTime);
         }
-        yield return new WaitForSeconds(2f);
     }
     IEnumerator ImageUpadate()
     {
@@ -60,7 +59,11 @@ public class WelcomeControl : MonoBehaviour
 
         SceneManager.LoadScene("HomeUI");
     }
-
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+            SceneManager.LoadScene("HomeUI");
+    }
 
 
 
