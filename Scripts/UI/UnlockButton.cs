@@ -16,7 +16,7 @@ public class UnlockButton : MonoBehaviour
     public void 解锁神荼()
     {
         int 碎片数 = 1, 鬼门卯数 = 10;
-        if (gameController.Count_Fragment >= 碎片数 && gameController.Count_GhostDoorMortise >= 鬼门卯数)
+        if (gameController.Count_Fragment >= 碎片数 && gameController.Count_GhostDoorMortise >= 鬼门卯数 && !gameController.神荼)
         {
             gameController.Count_Fragment -= 碎片数;
             gameController.Count_GhostDoorMortise -= 鬼门卯数;
@@ -25,12 +25,17 @@ public class UnlockButton : MonoBehaviour
             Instantiate(shenTu);
         }
         else
-            Instantiate(failUI);
+        {
+            if (!gameController.神荼)
+            {
+                Instantiate(failUI);
+            }
+        }
     }
     public void 解锁郁垒()
     {
         int 碎片数 = 3, 鬼门卯数 = 30;
-        if (gameController.Count_Fragment >= 碎片数 && gameController.Count_GhostDoorMortise >= 鬼门卯数)
+        if (gameController.Count_Fragment >= 碎片数 && gameController.Count_GhostDoorMortise >= 鬼门卯数 && !gameController.郁垒)
         {
             gameController.Count_Fragment -= 碎片数;
             gameController.Count_GhostDoorMortise -= 鬼门卯数;
@@ -39,6 +44,11 @@ public class UnlockButton : MonoBehaviour
             Instantiate(yuLei);
         }
         else
-            Instantiate(failUI);
+        {
+            if (!gameController.郁垒)
+            {
+                Instantiate(failUI);
+            }
+        }
     }
 }
