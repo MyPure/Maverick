@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public static int whiteTigerCount;//使用白虎的次数
+    public AudioSource audioSource;
 
     /// <summary>
     /// 状态在第一次运行或切换时调用
@@ -47,6 +48,10 @@ public class Player : MonoBehaviour
         if (!currentState)
         {
             currentState = GetComponent<Stand>();
+        }
+        if (!audioSource)
+        {
+            audioSource = GetComponent<AudioSource>();
         }
         flip = true;
         currentState.StateStart();

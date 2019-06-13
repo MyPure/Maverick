@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     public int passLevel = 0;//一共过了几关
     public int unlocklevel = 0;//解锁了几关
     public bool 神荼, 郁垒;//是否拥有此技能
-    public int Count_Fragment = 0, Count_GhostDoorMortise = 0;//收集物品数
+    public int Count_GhostDoorMortise = 0 ,Count_Fragment = 0 ;//收集物品数
     public int levelTotalNum;// 关卡总数
     //public List<int> fragment_nums;//各个关卡应该出现的碎片数
     private static bool first = true;//首次启动

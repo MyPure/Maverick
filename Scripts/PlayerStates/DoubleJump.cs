@@ -7,6 +7,7 @@ public class DoubleJump : PlayerState
     float velocity;
     public float jumpH = 1.5f;
     public int cost;
+    public AudioClip jump;
     public override void HandleInput()
     {
         HorizontalMove();
@@ -14,6 +15,8 @@ public class DoubleJump : PlayerState
     public override void StateStart()
     {
         velocity = Mathf.Sqrt(2 * player.G * jumpH);//v = √2gh
+        player.audioSource.clip = jump;
+        player.audioSource.Play();
     }
     public override void StateUpdate()
     {

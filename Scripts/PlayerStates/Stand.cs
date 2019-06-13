@@ -22,6 +22,10 @@ public class Stand : PlayerState
     }
     public override void StateUpdate()
     {
+        if(Time.time % 0.5 == 0)
+        {
+            Debug.Log(Time.time);
+        }
         HandleInput();//检测输入
         List<RaycastHit2D> hits = new List<RaycastHit2D>();
         for (int i = 0; i < player.rayY; i++)

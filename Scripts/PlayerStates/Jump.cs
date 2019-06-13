@@ -9,7 +9,7 @@ public class Jump : PlayerState
 
     [HideInInspector]
     public DoubleJump doubleJump;
-
+    public AudioClip jump;
     //固定方向跳跃
     bool jumpByDirection = false;
     Direction direction;
@@ -20,6 +20,8 @@ public class Jump : PlayerState
         doubleJump = GetComponent<DoubleJump>();
         jumpByDirection = false;
         velocity = Mathf.Sqrt(2 * player.G * jumpH);//v = √2gh
+        player.audioSource.clip = jump;
+        player.audioSource.Play();
     }
     public override void StateUpdate()
     {
