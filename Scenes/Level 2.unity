@@ -1158,7 +1158,7 @@ PrefabInstance:
     - target: {fileID: 4744343301160935970, guid: 4eb25335251a53a499907306f414758f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 176.74
+      value: 172.66
       objectReference: {fileID: 0}
     - target: {fileID: 4744343301160935970, guid: 4eb25335251a53a499907306f414758f,
         type: 3}
@@ -1213,7 +1213,7 @@ PrefabInstance:
     - target: {fileID: 6959015774537838459, guid: 4eb25335251a53a499907306f414758f,
         type: 3}
       propertyPath: m_Text
-      value: "\u72D0\u9B3C\uFF0C\u4E0D\u8981\u78B0\u5230"
+      value: "\u8FDC\u79BB\u795E\u79D8\u7684\u72D0\u9B3C\uFF0C\u4E00\u5B9A\u4E0D\u8981\u88AB\u5979\u7684\u9690\u533F\u6240\u8FF7\u60D1"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eb25335251a53a499907306f414758f, type: 3}
@@ -4692,7 +4692,7 @@ PrefabInstance:
     - target: {fileID: 4744343301160935970, guid: 4eb25335251a53a499907306f414758f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.54
+      value: 2.79
       objectReference: {fileID: 0}
     - target: {fileID: 4744343301160935970, guid: 4eb25335251a53a499907306f414758f,
         type: 3}
@@ -4747,7 +4747,7 @@ PrefabInstance:
     - target: {fileID: 6959015774537838459, guid: 4eb25335251a53a499907306f414758f,
         type: 3}
       propertyPath: m_Text
-      value: "\u8DF3\u8DC3\u4E2D\u518D\u6B21\u6309\u7A7A\u683C\u4F7F\u7528\u4E8C\u6BB5\u8DF3\u6280\u80FD\n"
+      value: "\u8FDE\u6309\u7A7A\u683C\u53EF\u5B9E\u73B0\u4E8C\u8FDE\u8DF3\uFF0C\u8BD5\u8BD5\u7528\u5B83\u8EB2\u907F\u969C\u788D"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eb25335251a53a499907306f414758f, type: 3}
@@ -33328,7 +33328,7 @@ PrefabInstance:
     - target: {fileID: 4744343301160935970, guid: 4eb25335251a53a499907306f414758f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.76
+      value: -15.43
       objectReference: {fileID: 0}
     - target: {fileID: 4744343301160935970, guid: 4eb25335251a53a499907306f414758f,
         type: 3}
@@ -33383,7 +33383,7 @@ PrefabInstance:
     - target: {fileID: 6959015774537838459, guid: 4eb25335251a53a499907306f414758f,
         type: 3}
       propertyPath: m_Text
-      value: "\u9B3C\u706B\uFF0C\u9700\u8EB2\u907F"
+      value: "\u5C0F\u5FC3\u7A81\u7136\u51FA\u73B0\u7684\u9B3C\u706B\uFF0C\u5B83\u4F1A\u4F24\u5BB3\u4F60"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eb25335251a53a499907306f414758f, type: 3}
