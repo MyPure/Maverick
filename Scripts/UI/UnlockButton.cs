@@ -23,6 +23,7 @@ public class UnlockButton : MonoBehaviour
             gameController.神荼 = true;
             AudioSource.PlayClipAtPoint(unLock, GameObject.FindWithTag("MainCamera").transform.position);
             Instantiate(shenTu);
+            gameController.SaveGame();
         }
         else
         {
@@ -42,6 +43,7 @@ public class UnlockButton : MonoBehaviour
             gameController.郁垒 = true;
             AudioSource.PlayClipAtPoint(unLock, GameObject.FindWithTag("MainCamera").transform.position);
             Instantiate(yuLei);
+            gameController.SaveGame();
         }
         else
         {
