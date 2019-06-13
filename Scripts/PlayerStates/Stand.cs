@@ -15,7 +15,7 @@ public class Stand : PlayerState
         else
         {
             time += Time.deltaTime;
-            if (time >= 0.5f)
+            if (time >= 0.75f)
             {
                 player.audioSource.clip = walk;
                 player.audioSource.Play();
@@ -26,7 +26,7 @@ public class Stand : PlayerState
     }
     public override void StateStart()
     {
-        time = 0.5f;
+        time = 0.75f;
     }
     private float time;
     public override void StateUpdate()

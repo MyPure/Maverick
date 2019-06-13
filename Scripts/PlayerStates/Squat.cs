@@ -52,7 +52,7 @@ public class Squat : PlayerState
         if (Input.GetAxis("Horizontal") != 0)
         {
             time += Time.deltaTime;
-            if (time >= 0.5f)
+            if (time >= 0.75f)
             {
                 player.audioSource.clip = walk;
                 player.audioSource.Play();
