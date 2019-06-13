@@ -6,10 +6,6 @@ using UnityEngine.UI;
 
 public class WelcomeControl : MonoBehaviour
 {
-    /// <summary>
-    /// 图片
-    /// </summary>
-    public Image image;
 
     /// <summary>
     /// 文本
@@ -20,36 +16,54 @@ public class WelcomeControl : MonoBehaviour
     /// <summary>
     /// 待播放图片
     /// </summary>
-    public List<Sprite> sprites;
+    public List<Image> images;
 
     /// <summary>
     /// 待播放文字
     /// </summary>
     public List<string> texts;
 
+    /// <summary>
+    /// 更新周期
+    /// </summary>
+    public float cycleTime = 1.5f;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Anim());
+        StartCoroutine(TextUpdate());
+        StartCoroutine(ImageUpadate());
     }
 
-    IEnumerator Anim()
+    IEnumerator TextUpdate()
     {
-        if(sprites.Count != texts.Count)
+        foreach (var v in texts)
         {
-            Debug.Log("请保证贴图数量和文字数量一致");
-            yield return null;
+            text.text = v;
+            yield return new WaitForSeconds(cycleTime);
         }
-        else
-        {
-            for(int i = 0;i < sprites.Count;i++)
-            {
-                image.sprite = sprites[i];
-                text.text = texts[i];
-                yield return new WaitForSeconds(1);
-            }
-            yield return new WaitForSeconds(2);
-            SceneManager.LoadScene("HomeUI");
-        }
+        yield return new WaitForSeconds(2f);
     }
+    IEnumerator ImageUpadate()
+    {
+        foreach(var v in images)
+        {
+            Color c = v.color;
+            while(c.a > 0)
+            {
+                c.a -= 0.01f;
+                v.color = c;
+                yield return null;
+            }
+
+        }
+
+        SceneManager.LoadScene("HomeUI");
+    }
+
+
+
+
+
+
 }
