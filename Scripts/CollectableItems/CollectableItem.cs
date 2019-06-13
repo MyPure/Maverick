@@ -77,6 +77,7 @@ public class CollectableItem : MonoBehaviour
         yield return null;
 
         //销毁物体
-        Destroy(gameObject);
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
     }
 }

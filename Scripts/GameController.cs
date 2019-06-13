@@ -14,14 +14,14 @@ public class GameController : MonoBehaviour
     public bool 神荼, 郁垒;//是否拥有此技能
     public int Count_Fragment = 0, Count_GhostDoorMortise = 0;//收集物品数
     public int levelTotalNum;// 关卡总数
-    public List<int> fragment_nums;//各个关卡应该出现的碎片数
+    //public List<int> fragment_nums;//各个关卡应该出现的碎片数
     private static bool first = true;//首次启动
-
+    public List<bool>[] order;
 
     private void Start()
     {
-        fragment_nums = new List<int>();
         levelTotalNum = 3;
+        //fragment_nums = new List<int>();
     }
 
     /// <summary>
@@ -49,8 +49,9 @@ public class GameController : MonoBehaviour
         //加载下一个关卡
         else
         {
-            //SceneManager.LoadScene("Level " + nowLevel);
-            StartCoroutine( LoadAndDestroyExtraFragment() );
+            SceneManager.LoadScene("Level " + nowLevel);
+            StartCoroutine( ReadOrder(nowLevel) );
+            //StartCoroutine( LoadAndDestroyExtraFragment() );
         }
     }
 
@@ -83,22 +84,21 @@ public class GameController : MonoBehaviour
         save.Count_GhostDoorMortise = Count_GhostDoorMortise;
         save.passLevel = passLevel;
         save.unlockLevel = unlocklevel;
+        save.order = order;
 
+        //var v = GameObject.FindGameObjectsWithTag("Fragment");
 
-
-        var v = GameObject.FindGameObjectsWithTag("Fragment");
-
-        if (fragment_nums.Count >= nowLevel)//不是第一次玩该关卡
-        {
-            fragment_nums[nowLevel-1] = v.Length;
-        }
-        else//是第一次
-        {
-            fragment_nums.Add(v.Length);
-        }
-        save.fragment_nums = fragment_nums;
-        Debug.Log("创建存档成功：fragment_nums的数据有" + save.fragment_nums.Count + "个");
-        Debug.Log("碎片值为" + fragment_nums[fragment_nums.Count - 1]);
+        //if (fragment_nums.Count >= nowLevel)//不是第一次玩该关卡
+        //{
+        //    fragment_nums[nowLevel-1] = v.Length;
+        //}
+        //else//是第一次
+        //{
+        //    fragment_nums.Add(v.Length);
+        //}
+        //save.fragment_nums = fragment_nums;
+        //Debug.Log("创建存档成功：fragment_nums的数据有" + save.fragment_nums.Count + "个");
+        //Debug.Log("碎片值为" + fragment_nums[fragment_nums.Count - 1]);
 
         return save;
     }
@@ -115,7 +115,7 @@ public class GameController : MonoBehaviour
 
     public void ClearSave()
     {
-        Save save = new Save(true);//生成空存档类
+        Save save = new Save(true,levelTotalNum);//生成空存档类
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/save/save.dat");
         bf.Serialize(file, save);
@@ -144,7 +144,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            Save save = new Save(true);
+            Save save = new Save(true, levelTotalNum);
             BinaryFormatter bf = new BinaryFormatter();
             if(!Directory.Exists(Application.persistentDataPath + "/save")){
                 Directory.CreateDirectory(Application.persistentDataPath + "/save");
@@ -168,51 +168,88 @@ public class GameController : MonoBehaviour
         unlocklevel = save.unlockLevel;
         神荼 = save.神荼;
         郁垒 = save.郁垒;
-        fragment_nums = save.fragment_nums;
-
-
-        Debug.Log("加载存档成功：fragment_nums的数据有" + fragment_nums.Count + "个");
+        //fragment_nums = save.fragment_nums;        
+        //Debug.Log("加载存档成功：fragment_nums的数据有" + fragment_nums.Count + "个");
+        order = save.order;
     }
 
+    private IEnumerator ReadOrder(int level)
+    {
+        yield return null;
+        GameObject[] framentList = GameObject.FindGameObjectsWithTag("Fragment");
+        if (level > 0)
+        {
+            if (order[level - 1][0])
+            {
+                for (int i = 0; i < framentList.Length; i++)
+                {
+                    order[level - 1].Add(true);
+                }
+                order[level - 1][0] = false;
+            }
+            else
+            {
+                for (int i = 0; i < framentList.Length; i++)
+                {
+                    framentList[i].GetComponent<SpriteRenderer>().enabled = order[level - 1][i + 1];
+                    framentList[i].GetComponent<BoxCollider2D>().enabled = order[level - 1][i + 1];
+                }
+            }
+        }
+        //foreach(List<bool> b in order)
+        //{
+        //    foreach(bool _b in b)
+        //    {
+        //        Debug.Log(_b);
+        //    }
+        //}
+    }
+
+    public void SaveOrder()
+    {
+        GameObject[] framentList = GameObject.FindGameObjectsWithTag("Fragment");
+        for (int i = 0; i < framentList.Length; i++)
+        {
+            order[nowLevel - 1][i + 1] = framentList[i].GetComponent<SpriteRenderer>().enabled;
+        }
+    }
     /// <summary>
     /// 销毁多余碎片
     /// </summary>
-    private IEnumerator LoadAndDestroyExtraFragment()
-    {
-        SceneManager.LoadScene("Level " + nowLevel);
-        yield return new WaitForSeconds(0.1f);
+    //private IEnumerator LoadAndDestroyExtraFragment()
+    //{
+    //    SceneManager.LoadScene("Level " + nowLevel);
+    //    yield return new WaitForSeconds(0.1f);
 
-        if(fragment_nums.Count < nowLevel)
-        {
-            ;//如果是第一次进入该关卡，先不用加载存档
-        }
-        else if (fragment_nums.Count != 0)
-        {
-	        GameObject[] obj_list = GameObject.FindGameObjectsWithTag("Fragment");
-	        HashSet<int> destroy_indexs = new HashSet<int>();
-	        int total_nums = obj_list.Length;
-	        int destoy_nums = total_nums - fragment_nums[nowLevel - 1];
-	        System.Random random = new System.Random();
+    //    if(fragment_nums.Count < nowLevel)
+    //    {
+    //        ;//如果是第一次进入该关卡，先不用加载存档
+    //    }
+    //    else if (fragment_nums.Count != 0)
+    //    {
+	   //     GameObject[] obj_list = GameObject.FindGameObjectsWithTag("Fragment");
+	   //     HashSet<int> destroy_indexs = new HashSet<int>();
+	   //     int total_nums = obj_list.Length;
+	   //     int destoy_nums = total_nums - fragment_nums[nowLevel - 1];
+	   //     System.Random random = new System.Random();
 
-	        Debug.Log("total_nums：" + total_nums);
-	        Debug.Log("destoy_nums：" + destoy_nums);
-	        Debug.Log("fragment_nums[nowLevel - 1]：" + fragment_nums[nowLevel - 1]);
+	   //     Debug.Log("total_nums：" + total_nums);
+	   //     Debug.Log("destoy_nums：" + destoy_nums);
+	   //     Debug.Log("fragment_nums[nowLevel - 1]：" + fragment_nums[nowLevel - 1]);
 
-	        while (destoy_nums > 0)
-	        {
-	            int index = random.Next() % (destoy_nums+1);
-	            if (destroy_indexs.Contains(index))
-	            {
-	                ;
-	            }
-	            else
-	            {
-	                Destroy(obj_list[index]);
-	                destoy_nums--;
-	            }
-	        }        	
-        }
-
-    }
-
+	   //     while (destoy_nums > 0)
+	   //     {
+	   //         int index = random.Next() % (destoy_nums+1);
+	   //         if (destroy_indexs.Contains(index))
+	   //         {
+	   //             ;
+	   //         }
+	   //         else
+	   //         {
+	   //             Destroy(obj_list[index]);
+	   //             destoy_nums--;
+	   //         }
+	   //     }        	
+    //    }
+    //}
 }

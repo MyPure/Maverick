@@ -68,7 +68,10 @@ public class Player : MonoBehaviour
         {
             Die();
         }
-        spriteRenderer.flipX = flip;
+        if (spriteRenderer)
+        {
+            spriteRenderer.flipX = flip;
+        }
         checkWhiteTiger();
     }
 
@@ -125,6 +128,10 @@ public class Player : MonoBehaviour
             Destroy(item);
         }
         AudioSource.PlayClipAtPoint(die, transform.position);
+
+        //保存碎片信息
+        gameController.SaveOrder();
+
         gameController.SaveGame();
     }
 }

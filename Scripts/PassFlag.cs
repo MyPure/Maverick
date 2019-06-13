@@ -43,7 +43,10 @@ public class PassFlag : MonoBehaviour
             {
                 gameController.passLevel = gameController.nowLevel;
             }
+
             Instantiate(passUI);
+
+            gameController.SaveOrder();//保存碎片数据
 
             //通关后的数据处理
             collectionManager.Pass();
