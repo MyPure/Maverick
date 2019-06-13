@@ -814,9 +814,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff3200273457cb45ae73c98227a3326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failUI: {fileID: 0}
-  successUI: {fileID: 0}
-  unLock: {fileID: 0}
 --- !u!1 &4652475410640218396
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +941,7 @@ GameObject:
   - component: {fileID: 7308794250039728135}
   - component: {fileID: 7077067489895929462}
   - component: {fileID: 5737704260573043571}
+  - component: {fileID: 1756623864325249369}
   - component: {fileID: 3538610514761259749}
   m_Layer: 5
   m_Name: "btn_\u89E3\u9501\u90C1\u5792"
@@ -1049,7 +1047,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3538610514761259749}
+      - m_Target: {fileID: 1756623864325249369}
         m_MethodName: "\u89E3\u9501\u90C1\u5792"
         m_Mode: 1
         m_Arguments:
@@ -1062,6 +1060,23 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1756623864325249369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7088837247408847238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a76dd55afb0be42b2e0bd9c084019d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shenTu: {fileID: 2945035783473838710, guid: 66fe9160522c5284e98823b8517f119c, type: 3}
+  yuLei: {fileID: 7946516101016892124, guid: 82557ca7b7a35794dbea759fdd5f4719, type: 3}
+  failUI: {fileID: 2945035783473838710, guid: ebfad8049c6e04f47a8876c6a7ef8a5c, type: 3}
+  unLock: {fileID: 8300000, guid: 5d2cff9d6193ba345bedbab0bb48c1fa, type: 3}
+  gameController: {fileID: 0}
 --- !u!114 &3538610514761259749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,10 +1089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff3200273457cb45ae73c98227a3326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failUI: {fileID: 2945035783473838710, guid: ebfad8049c6e04f47a8876c6a7ef8a5c, type: 3}
-  successUI: {fileID: 2945035783473838710, guid: 66fe9160522c5284e98823b8517f119c,
-    type: 3}
-  unLock: {fileID: 8300000, guid: 5d2cff9d6193ba345bedbab0bb48c1fa, type: 3}
 --- !u!1 &7089954788153655338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,6 +1519,7 @@ GameObject:
   - component: {fileID: 4197220992557150825}
   - component: {fileID: 1888853356293814838}
   - component: {fileID: 8140800789853927011}
+  - component: {fileID: 5548541534067299311}
   - component: {fileID: 288623508331540298}
   m_Layer: 5
   m_Name: "btn_\u89E3\u9501\u795E\u837C"
@@ -1613,7 +1625,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 288623508331540298}
+      - m_Target: {fileID: 5548541534067299311}
         m_MethodName: "\u89E3\u9501\u795E\u837C"
         m_Mode: 1
         m_Arguments:
@@ -1626,6 +1638,23 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &5548541534067299311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8848675885673429350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a76dd55afb0be42b2e0bd9c084019d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shenTu: {fileID: 2945035783473838710, guid: 66fe9160522c5284e98823b8517f119c, type: 3}
+  yuLei: {fileID: 7946516101016892124, guid: 82557ca7b7a35794dbea759fdd5f4719, type: 3}
+  failUI: {fileID: 2945035783473838710, guid: ebfad8049c6e04f47a8876c6a7ef8a5c, type: 3}
+  unLock: {fileID: 8300000, guid: 5d2cff9d6193ba345bedbab0bb48c1fa, type: 3}
+  gameController: {fileID: 0}
 --- !u!114 &288623508331540298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1638,7 +1667,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff3200273457cb45ae73c98227a3326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failUI: {fileID: 2945035783473838710, guid: ebfad8049c6e04f47a8876c6a7ef8a5c, type: 3}
-  successUI: {fileID: 2945035783473838710, guid: 66fe9160522c5284e98823b8517f119c,
-    type: 3}
-  unLock: {fileID: 8300000, guid: 5d2cff9d6193ba345bedbab0bb48c1fa, type: 3}

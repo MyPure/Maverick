@@ -8,6 +8,7 @@ using System.IO;
 public class GameController : MonoBehaviour
 {
     public GameObject chooseLevelUI;
+    public bool pause = false;
     public int nowLevel = 0;//当前在第几关
     public int passLevel = 0;//一共过了几关
     public int unlocklevel = 0;//解锁了几关
@@ -22,6 +23,27 @@ public class GameController : MonoBehaviour
     {
         levelTotalNum = 3;
         //fragment_nums = new List<int>();
+    }
+
+    public GameObject pauseUI;
+    private void Update()
+    {
+        if (nowLevel >= 1 && nowLevel <= 3)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) && pause==false)
+            {
+                pause = true;
+                Instantiate(pauseUI);
+            }
+            if (pause)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
+        }
     }
 
     /// <summary>

@@ -8,7 +8,7 @@ public class ChooseLevelButton : MonoBehaviour
     public GameController gameController;//在ChooseLevel中赋值
     public Text text;
     public Image image;
-
+    public GameObject unlockFailUI;
     /// <summary>
     /// 判断该按钮能否点击
     /// </summary>
@@ -38,7 +38,18 @@ public class ChooseLevelButton : MonoBehaviour
         {
             if (text)
             {
-                text.text = "解锁消耗  10";
+                if (level == 2)
+                {
+                    text.text = "解锁消耗  10\n需解锁神荼";
+                }
+                else if (level == 3)
+                {
+                    text.text = "解锁消耗  10\n需解锁郁垒";
+                }
+                else
+                {
+                    text.text = "解锁消耗  10";
+                }
             }
             if (image)
             {
@@ -49,11 +60,44 @@ public class ChooseLevelButton : MonoBehaviour
 
     public void Unlock()
     {
-        if (gameController.Count_GhostDoorMortise >= 10)
+        if (level == 2)
         {
-            gameController.Count_GhostDoorMortise -= 10;
-            gameController.unlocklevel = level;
-            gameController.SaveGame();
+            if (gameController.Count_GhostDoorMortise >= 10 && gameController.神荼)
+            {
+                gameController.Count_GhostDoorMortise -= 10;
+                gameController.unlocklevel = level;
+                gameController.SaveGame();
+            }
+            else
+            {
+                Instantiate(unlockFailUI);
+            }
+        }
+        else if (level == 3)
+        {
+            if (gameController.Count_GhostDoorMortise >= 10 && gameController.郁垒)
+            {
+                gameController.Count_GhostDoorMortise -= 10;
+                gameController.unlocklevel = level;
+                gameController.SaveGame();
+            }
+            else
+            {
+                Instantiate(unlockFailUI);
+            }
+        }
+        else
+        {
+            if (gameController.Count_GhostDoorMortise >= 10)
+            {
+                gameController.Count_GhostDoorMortise -= 10;
+                gameController.unlocklevel = level;
+                gameController.SaveGame();
+            }
+            else
+            {
+                Instantiate(unlockFailUI);
+            }
         }
     }
 

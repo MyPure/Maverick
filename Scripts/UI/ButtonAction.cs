@@ -4,10 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ButtonAction : MonoBehaviour
-{
-    public GameObject failUI;
-    public GameObject successUI;
-    public AudioClip unLock;
+{   
     private GameController gameController;
     private void Awake()
     {
@@ -86,33 +83,8 @@ public class ButtonAction : MonoBehaviour
     {
         gameController.LoadNext();
     }
-
-    public void 解锁神荼()
+    public void Unpause()
     {
-        int 碎片数 = 1, 鬼门卯数 = 10;
-        if (gameController.Count_Fragment >= 碎片数 && gameController.Count_GhostDoorMortise >= 鬼门卯数)
-        {
-            gameController.Count_Fragment -= 碎片数;
-            gameController.Count_GhostDoorMortise -= 鬼门卯数;
-            gameController.神荼 = true;
-            AudioSource.PlayClipAtPoint(unLock, GameObject.FindWithTag("MainCamera").transform.position);
-            InstantiateGameObject(successUI);
-        }
-        else
-            InstantiateGameObject(failUI);
-    }
-    public void 解锁郁垒()
-    {
-        int 碎片数 = 3, 鬼门卯数 = 30;
-        if (gameController.Count_Fragment >= 碎片数 && gameController.Count_GhostDoorMortise >= 鬼门卯数)
-        {
-            gameController.Count_Fragment -= 碎片数;
-            gameController.Count_GhostDoorMortise -= 鬼门卯数;
-            gameController.郁垒 = true;
-            AudioSource.PlayClipAtPoint(unLock, GameObject.FindWithTag("MainCamera").transform.position);
-            InstantiateGameObject(successUI);
-        }
-        else
-            InstantiateGameObject(failUI);
+        gameController.pause = false;
     }
 }
