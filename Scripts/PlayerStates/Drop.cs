@@ -33,9 +33,8 @@ public class Drop : PlayerState
                 return;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space) && player.collectionManager.Count_Fragment >= doubleJump.cost)
+        if (Input.GetKeyDown(KeyCode.Space) && player.gameController.神荼)
         {
-            player.collectionManager.Count_Fragment -= doubleJump.cost;
             ChangeStateTo(StateType.DoubleJump);//Drop -> DoubleJump
             return;
         }

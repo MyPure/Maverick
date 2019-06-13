@@ -6,7 +6,6 @@ public class DoubleJump : PlayerState
 {
     float velocity;
     public float jumpH = 1.5f;
-    public int cost;
     public AudioClip jump;
     public override void HandleInput()
     {
