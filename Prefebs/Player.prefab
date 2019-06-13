@@ -172,7 +172,7 @@ MonoBehaviour:
   - {fileID: 6007908598774719268}
   height: 2
   width: 1
-  speed: 4
+  speed: 4.5
   G: 30
   rayY: 4
   rayX: 6
