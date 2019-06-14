@@ -174,6 +174,8 @@ public class GameController : MonoBehaviour
             FileStream file = File.Create(Application.persistentDataPath + "/save/save.dat");
             bf.Serialize(file, save);
             file.Close();
+
+            LoadSave(save);
             Debug.Log("未找到存档文件，已创建空存档");
         }
     }
@@ -218,12 +220,12 @@ public class GameController : MonoBehaviour
                 }
             }
         }
-        //foreach(List<bool> b in order)
+        //foreach (List<bool> b in order)
         //{
-        //    foreach(bool _b in b)
-        //    {
-        //        Debug.Log(_b);
-        //    }
+            //foreach (bool _b in b)
+            //{
+            //    Debug.Log(_b);
+            //}
         //}
     }
 
